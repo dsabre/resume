@@ -40,6 +40,14 @@
 				</a>
 			</li>
 			<li class="nav-item mb-1">
+				<a href="#skills"
+				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
+				   @click="setLinkActive"
+				>
+					Skills
+				</a>
+			</li>
+			<li class="nav-item mb-1">
 				<a href="#contact"
 				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
 				   @click="setLinkActive"

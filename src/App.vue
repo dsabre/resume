@@ -7,6 +7,9 @@
 
 			<Home/>
 			<About/>
+			<Resume/>
+			<Skills/>
+			<Contact/>
 		</div>
 	</div>
 </template>
@@ -18,6 +21,9 @@ import Sidebar from "@/components/Sidebar.vue";
 import Navbar from "@/components/Navbar.vue";
 import Home from "@/components/sections/Home.vue";
 import About from "@/components/sections/About.vue";
+import Resume from "@/components/sections/Resume.vue";
+import Skills from "@/components/sections/Skills.vue";
+import Contact from "@/components/sections/Contact.vue";
 
 // https://getbootstrap.com/docs/5.1/getting-started/introduction/
 // https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free
@@ -30,6 +36,9 @@ import About from "@/components/sections/About.vue";
 
 @Component({
 	components: {
+		Contact,
+		Skills,
+		Resume,
 		About,
 		Home,
 		Navbar,
