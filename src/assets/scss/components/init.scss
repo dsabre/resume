@@ -1,0 +1,38 @@
+#init {
+	padding-top: 70px !important;
+
+	h1 {
+		@extend .font-2;
+	}
+
+	img {
+		@include media-breakpoint-down(sm) {
+			& {
+				width:         100%;
+				margin-bottom: 7px;
+			}
+		}
+
+		@include media-breakpoint-up(sm) {
+			& {
+				width:   70%;
+				margin:  0 auto;
+				display: block;
+			}
+		}
+
+		@include media-breakpoint-up(md) {
+			& {
+				width: 100%;
+			}
+		}
+	}
+
+	#social-icons {
+		@include media-breakpoint-down(sm) {
+			& {
+				text-align: center;
+			}
+		}
+	}
+}
