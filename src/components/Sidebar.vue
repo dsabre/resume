@@ -15,12 +15,36 @@
 		<hr>
 
 		<ul id="menu" class="nav nav-pills flex-column mb-auto">
-			<li v-for="n in 6" :key="n" class="nav-item mb-1">
-				<a href="#"
-				   class="nav-link text-end text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
+			<li class="nav-item mb-1">
+				<a href="#home"
+				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
 				   @click="setLinkActive"
 				>
-					Link {{ n }}
+					Home
+				</a>
+			</li>
+			<li class="nav-item mb-1">
+				<a href="#about"
+				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
+				   @click="setLinkActive"
+				>
+					About me
+				</a>
+			</li>
+			<li class="nav-item mb-1">
+				<a href="#resume"
+				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
+				   @click="setLinkActive"
+				>
+					Resume
+				</a>
+			</li>
+			<li class="nav-item mb-1">
+				<a href="#contact"
+				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
+				   @click="setLinkActive"
+				>
+					Contact
 				</a>
 			</li>
 		</ul>
@@ -42,6 +66,9 @@ export default {
 		toggle: function (): void {
 			this.closed = !this.closed;
 		},
+		close: function (): void {
+			this.closed = true;
+		},
 		setLinkActive: function (event: PointerEvent): void {
 			try {
 				document.querySelector('#menu li a.active').classList.remove("active");
@@ -50,6 +77,8 @@ export default {
 			}
 
 			event.target.classList.add('active');
+
+			this.close();
 		}
 	}
 }

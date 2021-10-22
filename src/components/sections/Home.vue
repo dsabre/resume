@@ -1,5 +1,5 @@
 <template>
-	<section id="init" class="p-3">
+	<section id="home" class="p-3">
 		<div class="row">
 			<div class="col-md-5">
 				<img src="https://picsum.photos/570/740" alt="">
@@ -7,6 +7,8 @@
 			<div class="col-md-7">
 				<h1 v-html="h1"></h1>
 				<Typer/>
+
+				<p id="teaser">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus aliquet erat, ut tristique mauris dignissim faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 
 				<div id="social-icons">
 					<a id="facebook"
@@ -73,7 +75,7 @@ import Typer from "@/components/Typer.vue";
 import * as bootstrap from 'bootstrap';
 
 export default {
-	name: "Init",
+	name: "Home",
 	components: {Typer},
 	data(): unknown {
 		return {

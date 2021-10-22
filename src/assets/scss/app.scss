@@ -1,9 +1,10 @@
-@import "utils";
 @import "fonts";
 @import "~bootstrap/scss/bootstrap";
+@import "utils";
 
 @import "themes/light";
 
 @import "components/sidebar";
-@import "components/init";
+@import "components/home";
 @import "components/typer";
+@import "components/about";

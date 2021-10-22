@@ -1,5 +1,5 @@
-#init {
-	padding-top: 70px !important;
+#home {
+	@extend .page-section;
 
 	h1 {
 		@extend .font-2;
@@ -26,6 +26,10 @@
 				width: 100%;
 			}
 		}
+	}
+
+	#teaser{
+		@extend .font-2;
 	}
 
 	#social-icons {

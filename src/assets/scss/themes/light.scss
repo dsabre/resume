@@ -1,12 +1,12 @@
 #sidebar {
 	@extend .bg-light;
 
-	#menu{
-		li{
-			a{
+	#menu {
+		li {
+			a {
 				@extend .text-dark;
 
-				&.active, &:hover{
+				&.active, &:hover {
 					@extend .border-dark;
 
 					background-color: $gray-300;
@@ -21,7 +21,11 @@
 	@extend .bg-light;
 }
 
-#init{
+#home {
+	#teaser {
+		color: $gray-600;
+	}
+
 	#social-icons {
 		#facebook {
 			color: $gray-600;

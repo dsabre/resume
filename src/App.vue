@@ -5,7 +5,8 @@
 		<div id="content-wrapper" class="d-flex flex-column w-100">
 			<Navbar/>
 
-			<Init/>
+			<Home/>
+			<About/>
 		</div>
 	</div>
 </template>
@@ -15,7 +16,8 @@ import {Component, Vue} from 'vue-property-decorator';
 import 'bootstrap';
 import Sidebar from "@/components/Sidebar.vue";
 import Navbar from "@/components/Navbar.vue";
-import Init from "@/components/sections/Init.vue";
+import Home from "@/components/sections/Home.vue";
+import About from "@/components/sections/About.vue";
 
 // https://getbootstrap.com/docs/5.1/getting-started/introduction/
 // https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free
@@ -28,7 +30,8 @@ import Init from "@/components/sections/Init.vue";
 
 @Component({
 	components: {
-		Init,
+		About,
+		Home,
 		Navbar,
 		Sidebar
 	}

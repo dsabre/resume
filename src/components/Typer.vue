@@ -1,5 +1,5 @@
 <template>
-	<p id="typer" ref="typer" class="fs-2"></p>
+	<p id="typer" ref="typer" class="fs-2 m-0"></p>
 </template>
 
 <script lang="ts">
