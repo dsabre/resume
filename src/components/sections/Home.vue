@@ -1,5 +1,5 @@
 <template>
-	<section id="home" class="p-3">
+	<section id="home">
 		<div class="row">
 			<div class="col-md-5">
 				<img src="https://picsum.photos/570/740" alt="">

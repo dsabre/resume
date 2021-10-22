@@ -1,5 +1,5 @@
 <template>
-	<section id="about" class="p-3">
+	<section id="about">
 		about
 	</section>
 </template>
