@@ -77,11 +77,11 @@
 			<div id="language-selector" class="col text-end">
 				<nav style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb">
 					<ol class="breadcrumb m-0 d-inline-flex">
-						<li class="breadcrumb-item">
+						<li class="breadcrumb-item" data-locale="it">
 							<a href="#" class="text-decoration-none" @click="setSiteLanguage('it', $event)">ITA</a>
 						</li>
-						<li class="breadcrumb-item active" aria-current="page">
-							<a href="#" class="text-decoration-none" @click="setSiteLanguage('en', $event)">ENG</a>
+						<li class="breadcrumb-item" data-locale="en">
+							<a href="#" class="text-decoration-none" data-locale="en" @click="setSiteLanguage('en', $event)">ENG</a>
 						</li>
 					</ol>
 				</nav>
@@ -91,6 +91,8 @@
 </template>
 
 <script lang="ts">
+import Cookies from 'js-cookie'
+
 export default {
 	name: "Sidebar",
 	data: function (): unknown {
@@ -102,6 +104,7 @@ export default {
 	},
 	mounted(): void {
 		this.$root.$on('sidebar-toggle', this.toggle);
+		this.$root.$on('sidebar-locale', this.setLocale);
 
 		this.initLinkActive();
 		this.scrollspy();
@@ -181,20 +184,28 @@ export default {
 		setLinkClickedFalse: function (): void {
 			this.linkClicked = false;
 		},
-		setSiteLanguage: function (language: string, event: PointerEvent): void {
+		setSiteLanguage: function (locale: string, event: PointerEvent): void {
 			event.preventDefault();
 
-			this.$i18n.locale = language;
+			this.$i18n.locale = locale;
 
+			this.setLinkLocaleActive(event.target.parentNode);
+
+			Cookies.set('locale', locale);
+		},
+		setLinkLocaleActive: function (newActiveLink: Element): void{
 			const currentActiveLink = document.querySelector('#language-selector li.active');
 			if (currentActiveLink) {
 				currentActiveLink.removeAttribute('aria-current');
 				currentActiveLink.classList.remove("active");
 			}
 
-			const newActiveLink = event.target.parentNode;
 			newActiveLink.setAttribute('aria-current', 'page');
 			newActiveLink.classList.add('active');
+		},
+		setLocale: function (locale: string): void {
+			const newActiveLink = document.querySelector('#language-selector li[data-locale="' + locale + '"]');
+			this.setLinkLocaleActive(newActiveLink);
 		}
 	}
 }

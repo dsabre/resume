@@ -19,6 +19,7 @@
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
 import 'bootstrap';
+import Cookies from 'js-cookie'
 import Sidebar from "@/components/Sidebar.vue";
 import Navbar from "@/components/Navbar.vue";
 import Home from "@/components/sections/Home.vue";
@@ -45,6 +46,11 @@ import Contact from "@/components/sections/Contact.vue";
 		Home,
 		Navbar,
 		Sidebar
+	},
+	mounted() {
+		const prevLocale = Cookies.get('locale') || this.$i18n.fallbackLocale;
+		this.$i18n.locale = prevLocale;
+		this.$root.$emit('sidebar-locale', prevLocale);
 	}
 })
 export default class App extends Vue {
