@@ -17,8 +17,9 @@
 		<ul id="menu" class="nav nav-pills flex-column mb-auto">
 			<li class="nav-item mb-1">
 				<a href="#home"
-				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
-				   @click="setLinkActive"
+				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1 active"
+				   @click="clickNavLink"
+				   aria-current="page"
 				>
 					Home
 				</a>
@@ -26,7 +27,7 @@
 			<li class="nav-item mb-1">
 				<a href="#about"
 				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
-				   @click="setLinkActive"
+				   @click="clickNavLink"
 				>
 					About me
 				</a>
@@ -34,7 +35,7 @@
 			<li class="nav-item mb-1">
 				<a href="#resume"
 				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
-				   @click="setLinkActive"
+				   @click="clickNavLink"
 				>
 					Resume
 				</a>
@@ -42,7 +43,7 @@
 			<li class="nav-item mb-1">
 				<a href="#skills"
 				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
-				   @click="setLinkActive"
+				   @click="clickNavLink"
 				>
 					Skills
 				</a>
@@ -50,7 +51,7 @@
 			<li class="nav-item mb-1">
 				<a href="#contact"
 				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
-				   @click="setLinkActive"
+				   @click="clickNavLink"
 				>
 					Contact
 				</a>
@@ -99,6 +100,14 @@ export default {
 	},
 	mounted(): void {
 		this.$root.$on('sidebar-toggle', this.toggle);
+
+		// onload check if a section is requested, if so, set the corrispondent link nav active
+		if (window.location.hash) {
+			const newActiveLink = document.querySelector('#menu li a[href="' + window.location.hash + '"]');
+			if (newActiveLink) {
+				this.setLinkActive(newActiveLink);
+			}
+		}
 	},
 	methods: {
 		toggle: function (): void {
@@ -107,16 +116,23 @@ export default {
 		close: function (): void {
 			this.closed = true;
 		},
-		setLinkActive: function (event: PointerEvent): void {
-			try {
-				document.querySelector('#menu li a.active').classList.remove("active");
-			} catch (err) {
-				//
-			}
+		clickNavLink: function (event: PointerEvent): void {
+			const newActiveLink = event.target as Element;
 
-			event.target.classList.add('active');
+			this.setLinkActive(newActiveLink);
 
 			this.close();
+		},
+		setLinkActive: function (newActiveLink: Element): void {
+			const currentActiveLink = document.querySelector('#menu li a.active');
+
+			if (currentActiveLink) {
+				currentActiveLink.removeAttribute('aria-current');
+				currentActiveLink.classList.remove("active");
+			}
+
+			newActiveLink.setAttribute('aria-current', 'page');
+			newActiveLink.classList.add('active');
 		},
 		setSiteLanguage: function (language: string, event: PointerEvent): void {
 			event.preventDefault();
