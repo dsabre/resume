@@ -56,6 +56,36 @@
 				</a>
 			</li>
 		</ul>
+
+		<div class="row">
+			<div id="theme-selector" class="col ms-2">
+				<div class="row w-auto">
+					<div class="col-4 w-auto p-0">
+						<i class="fas fa-sun me-2"></i>
+					</div>
+					<div class="col-4 w-auto p-0">
+						<div class="d-flex form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" disabled>
+						</div>
+					</div>
+					<div class="col-4 w-auto p-0">
+						<i class="fas fa-moon"></i>
+					</div>
+				</div>
+			</div>
+			<div id="language-selector" class="col text-end">
+				<nav style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb">
+					<ol class="breadcrumb m-0 d-inline-flex">
+						<li class="breadcrumb-item">
+							<a href="#" class="text-decoration-none" @click="setSiteLanguage('it', $event)">ITA</a>
+						</li>
+						<li class="breadcrumb-item active" aria-current="page">
+							<a href="#" class="text-decoration-none" @click="setSiteLanguage('en', $event)">ENG</a>
+						</li>
+					</ol>
+				</nav>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -87,6 +117,12 @@ export default {
 			event.target.classList.add('active');
 
 			this.close();
+		},
+		setSiteLanguage: function (language: string, event: PointerEvent): void {
+			event.preventDefault();
+
+			// TODO
+			console.log(language);
 		}
 	}
 }
