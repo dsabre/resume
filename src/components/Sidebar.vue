@@ -103,14 +103,7 @@ export default {
 	mounted(): void {
 		this.$root.$on('sidebar-toggle', this.toggle);
 
-		// onload check if a section is requested, if so, set the corrispondent link nav active
-		if (window.location.hash) {
-			const newActiveLink = document.querySelector('#menu li a[href="' + window.location.hash + '"]');
-			if (newActiveLink) {
-				this.setLinkActive(newActiveLink);
-			}
-		}
-
+		this.initLinkActive();
 		this.scrollspy();
 	},
 	methods: {
@@ -140,6 +133,15 @@ export default {
 			newActiveLink.setAttribute('aria-current', 'page');
 			newActiveLink.classList.add('active');
 		},
+		initLinkActive: function (): void {
+			// onload check if a section is requested, if so, set the corrispondent link nav active
+			if (window.location.hash) {
+				const newActiveLink = document.querySelector('#menu li a[href="' + window.location.hash + '"]');
+				if (newActiveLink) {
+					this.setLinkActive(newActiveLink);
+				}
+			}
+		},
 		scrollspy: function (): void {
 			const section = document.querySelectorAll("section");
 			const sections: Record<string, number> = {};
@@ -156,7 +158,7 @@ export default {
 						window.clearTimeout(this.isScrolling);
 					}
 					this.isScrolling = setTimeout(this.setLinkClickedFalse, 66);
-					
+
 					return;
 				}
 
