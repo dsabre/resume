@@ -5,6 +5,8 @@
 		<div id="content-wrapper" class="d-flex flex-column w-100">
 			<Navbar/>
 
+			<p>{{ $t("message.hello") }}</p>
+
 			<Home/>
 			<About/>
 			<Resume/>
@@ -43,6 +45,9 @@ import Contact from "@/components/sections/Contact.vue";
 		Home,
 		Navbar,
 		Sidebar
+	},
+	mounted() {
+		console.log(this.$i18n.locale);
 	}
 })
 export default class App extends Vue {
