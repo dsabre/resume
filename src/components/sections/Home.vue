@@ -7,8 +7,6 @@
 			<div class="col-md-7">
 				<h1 v-html="$t('home.h1')"></h1>
 
-				<div class="font-invaders animate__animated animate__bounce animate__delay-2s">B</div>
-
 				<Typer/>
 
 				<p id="teaser">{{ $t('home.teaser') }}</p>

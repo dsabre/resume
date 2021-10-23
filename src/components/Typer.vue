@@ -42,7 +42,7 @@ export default {
 					pause: 2000
 				},
 				{
-					html: '<span style="color: var(--bs-pink);">Gamer! <span class="font-invaders">B</span></span>',
+					html: '<span style="color: var(--bs-pink);">Gamer! <span class="d-inline-block animate__animated animate__backInDown"><span class="d-inline-block font-invaders animate__animated animate__tada animate__delay-2s">B</span></span></span>',
 					back: ['all', 110],
 					function: 'line',
 					pause: 3000
