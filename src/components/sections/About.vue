@@ -1,28 +1,27 @@
 <template>
 	<section id="about">
-		<h1>About Me</h1>
+		<h1>{{ $t('about.title') }}</h1>
 
-		<p>Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.</p>
-		<p>Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.</p>
+		<p v-html="$t('about.text').join('<br><br>')"></p>
 
 		<dl class="row">
-			<dt class="col-4 col-md-3 text-end">Name</dt>
+			<dt class="col-4 col-md-3 text-end">{{ $t('about.details.name.label') }}</dt>
 			<dd class="col-8 col-md-9">Daniele</dd>
 
-			<dt class="col-4 col-md-3 text-end">Surname</dt>
+			<dt class="col-4 col-md-3 text-end">{{ $t('about.details.surname.label') }}</dt>
 			<dd class="col-8 col-md-9">Sabre</dd>
 
-			<dt class="col-4 col-md-3 text-end">Age</dt>
+			<dt class="col-4 col-md-3 text-end">{{ $t('about.details.age.label') }}</dt>
 			<dd class="col-8 col-md-9">{{ age }}</dd>
 
-			<dt class="col-4 col-md-3 text-end">Gender</dt>
-			<dd class="col-8 col-md-9">Male</dd>
+			<dt class="col-4 col-md-3 text-end">{{ $t('about.details.gender.label') }}</dt>
+			<dd class="col-8 col-md-9">{{ $t('about.details.gender.value') }}</dd>
 
-			<dt class="col-4 col-md-3 text-end">Nationality</dt>
-			<dd class="col-8 col-md-9">Italy</dd>
+			<dt class="col-4 col-md-3 text-end">{{ $t('about.details.nationality.label') }}</dt>
+			<dd class="col-8 col-md-9">{{ $t('about.details.nationality.value') }}</dd>
 
-			<dt class="col-4 col-md-3 text-end">Address</dt>
-			<dd class="col-8 col-md-9">Turin</dd>
+			<dt class="col-4 col-md-3 text-end">{{ $t('about.details.address.label') }}</dt>
+			<dd class="col-8 col-md-9">{{ $t('about.details.address.value') }}</dd>
 		</dl>
 	</section>
 </template>

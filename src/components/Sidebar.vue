@@ -5,7 +5,7 @@
 	>
 		<div class="row">
 			<div class="col-10 col-md-12 font-1 fs-4 text-uppercase">
-				Menù
+				{{ $t('sidebar.title') }}
 			</div>
 			<div class="col-2 text-end d-block d-md-none">
 				<i class="fas fa-times cursor-pointer" @click="toggle"></i>
@@ -21,7 +21,7 @@
 				   @click="clickNavLink"
 				   aria-current="page"
 				>
-					Home
+					{{ $t('sidebar.home') }}
 				</a>
 			</li>
 			<li class="nav-item mb-1">
@@ -29,7 +29,7 @@
 				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
 				   @click="clickNavLink"
 				>
-					About me
+					{{ $t('sidebar.about') }}
 				</a>
 			</li>
 			<li class="nav-item mb-1">
@@ -37,7 +37,7 @@
 				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
 				   @click="clickNavLink"
 				>
-					Resume
+					{{ $t('sidebar.resume') }}
 				</a>
 			</li>
 			<li class="nav-item mb-1">
@@ -45,7 +45,7 @@
 				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
 				   @click="clickNavLink"
 				>
-					Skills
+					{{ $t('sidebar.skills') }}
 				</a>
 			</li>
 			<li class="nav-item mb-1">
@@ -53,7 +53,7 @@
 				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
 				   @click="clickNavLink"
 				>
-					Contact
+					{{ $t('sidebar.contact') }}
 				</a>
 			</li>
 		</ul>
