@@ -95,7 +95,9 @@ export default {
 	name: "Sidebar",
 	data: function (): unknown {
 		return {
-			closed: true
+			closed: true,
+			linkClicked: false,
+			isScrolling: null
 		};
 	},
 	mounted(): void {
@@ -108,6 +110,8 @@ export default {
 				this.setLinkActive(newActiveLink);
 			}
 		}
+
+		this.scrollspy();
 	},
 	methods: {
 		toggle: function (): void {
@@ -117,6 +121,8 @@ export default {
 			this.closed = true;
 		},
 		clickNavLink: function (event: PointerEvent): void {
+			this.linkClicked = true;
+
 			const newActiveLink = event.target as Element;
 
 			this.setLinkActive(newActiveLink);
@@ -133,6 +139,45 @@ export default {
 
 			newActiveLink.setAttribute('aria-current', 'page');
 			newActiveLink.classList.add('active');
+		},
+		scrollspy: function (): void {
+			const section = document.querySelectorAll("section");
+			const sections: Record<string, number> = {};
+
+			for (let i = 0; i < section.length; i++) {
+				sections[section[i].id] = section[i].offsetTop;
+			}
+
+			const sectionsKeys = Object.keys(sections).reverse();
+
+			window.addEventListener('scroll', () => {
+				if (this.linkClicked) {
+					if (this.isScrolling) {
+						window.clearTimeout(this.isScrolling);
+					}
+					this.isScrolling = setTimeout(this.setLinkClickedFalse, 66);
+					
+					return;
+				}
+
+				const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+				for (let i = 0; i < sectionsKeys.length; i++) {
+					if (sections[sectionsKeys[i]] > scrollPosition) {
+						continue;
+					}
+
+					const newActiveLink = document.querySelector('#menu li a:not(.active)[href="#' + sectionsKeys[i] + '"]');
+					if (newActiveLink) {
+						this.setLinkActive(newActiveLink);
+					}
+
+					break;
+				}
+			});
+		},
+		setLinkClickedFalse: function (): void {
+			this.linkClicked = false;
 		},
 		setSiteLanguage: function (language: string, event: PointerEvent): void {
 			event.preventDefault();
