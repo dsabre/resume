@@ -184,8 +184,17 @@ export default {
 		setSiteLanguage: function (language: string, event: PointerEvent): void {
 			event.preventDefault();
 
-			// TODO
-			console.log(language);
+			this.$i18n.locale = language;
+
+			const currentActiveLink = document.querySelector('#language-selector li.active');
+			if (currentActiveLink) {
+				currentActiveLink.removeAttribute('aria-current');
+				currentActiveLink.classList.remove("active");
+			}
+
+			const newActiveLink = event.target.parentNode;
+			newActiveLink.setAttribute('aria-current', 'page');
+			newActiveLink.classList.add('active');
 		}
 	}
 }
