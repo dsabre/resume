@@ -5,8 +5,6 @@
 		<div id="content-wrapper" class="d-flex flex-column w-100">
 			<Navbar/>
 
-			<p>{{ $t("message.hello") }}</p>
-
 			<Home/>
 			<About/>
 			<Resume/>
