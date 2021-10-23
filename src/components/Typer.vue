@@ -39,13 +39,13 @@ export default {
 					html: '<span class="font-monospace bg-dark" style="color: var(--bs-teal)">Programmer</span>',
 					back: ['all', 100],
 					function: 'line',
-					pause: 1000
+					pause: 2000
 				},
 				{
-					html: '<span style="color: var(--bs-pink);">Gamer!</span>',
+					html: '<span style="color: var(--bs-pink);">Gamer! <span class="font-invaders">B</span></span>',
 					back: ['all', 110],
 					function: 'line',
-					pause: 1500
+					pause: 3000
 				}
 			]
 		}
