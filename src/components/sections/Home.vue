@@ -12,7 +12,7 @@
 			<div class="md:tw-pl-3">
 				<h1 v-html="$t('home.h1')"></h1>
 
-				<Typer class="tw-hidden"/>
+				<Typer class="tw-my-3"/>
 
 				<p class="tw-my-3">{{ $t('home.teaser') }}</p>
 

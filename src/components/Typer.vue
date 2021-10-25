@@ -1,5 +1,5 @@
 <template>
-	<p id="typer" ref="typer" class="fs-2 m-0"></p>
+	<p id="typer" ref="typer" class="tw-text-4xl tw-h-12 font-2"></p>
 </template>
 
 <script lang="ts">
@@ -18,31 +18,31 @@ export default {
 			},
 			phrases: [
 				{
-					html: 'Web <span style="color: var(--bs-blue);">Developer</span>',
+					html: 'Web <span class="tw-text-blue-500">Developer</span>',
 					back: [-4, 120],
 					function: 'line',
 					pause: 1000
 				},
 				{
-					html: '<span style="color: var(--bs-indigo);">Designer</span>',
+					html: '<span class="tw-text-indigo-500">Designer</span>',
 					back: ['all', 100],
 					function: 'continue',
 					pause: 1000
 				},
 				{
-					html: '<span style="color: var(--bs-orange);">Frontend</span> Developer',
+					html: '<span class="tw-text-yellow-500">Frontend</span> Developer',
 					back: ['all', 80],
 					function: 'line',
 					pause: 1000
 				},
 				{
-					html: '<span class="font-monospace bg-dark" style="color: var(--bs-teal)">Programmer</span>',
+					html: '<span class="tw-font-mono tw-bg-black tw-text-green-400">Programmer</span>',
 					back: ['all', 100],
 					function: 'line',
 					pause: 2000
 				},
 				{
-					html: '<span style="color: var(--bs-pink);">Gamer! <span class="d-inline-block animate__animated animate__backInDown"><span class="d-inline-block font-invaders animate__animated animate__tada animate__delay-2s">B</span></span></span>',
+					html: '<span class="tw-text-pink-500">Gamer! <span class="tw-inline-block animate__animated animate__backInDown"><span class="tw-inline-block font-invaders animate__animated animate__tada animate__delay-2s">B</span></span></span>',
 					back: ['all', 110],
 					function: 'line',
 					pause: 3000
