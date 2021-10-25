@@ -5,7 +5,7 @@
 		<div id="content-wrapper" class="tw-flex tw-flex-col tw-w-full">
 			<Navbar/>
 
-<!--			<Home/>-->
+			<Home/>
 			<About/>
 			<Resume/>
 			<Skills/>

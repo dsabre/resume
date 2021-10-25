@@ -3,6 +3,7 @@
 }
 
 .page-section {
+	@apply tw-p-3;
 	@apply md:tw-pt-16;
 	@apply md:tw-pl-8;
 	@apply md:tw-h-screen;

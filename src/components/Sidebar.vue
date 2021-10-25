@@ -3,7 +3,7 @@
 		 v-bind:class="{'closed': closed}"
 		 class="tw-left-0 tw-flex tw-flex-col tw-fixed md:tw-statica tw-w-screen md:tw-w-1/4 tw-p-4 tw-min-h-screen md:tw-border-r md:tw-border-gray-300 tw-bg-gray-50 tw-z-10"
 	>
-		<div class="tw-grid tw-grid-cols-2 tw-gap-4">
+		<div class="tw-grid tw-grid-cols-2 tw-gap-0">
 			<div class="font-1 tw-uppercase tw-text-2xl">{{ $t('sidebar.title') }}</div>
 			<div class="tw-text-right md:tw-hidden"><i class="fas fa-times cursor-pointer" @click="toggle"></i></div>
 		</div>
@@ -56,7 +56,7 @@
 			</li>
 		</ul>
 
-		<div class="tw-grid tw-grid-cols-2 tw-gap-4">
+		<div class="tw-grid tw-grid-cols-2 tw-gap-0">
 			<div>
 				<i class="fas fa-sun tw-text-gray-500"></i>
 				<i class="fas fa-moon tw-text-gray-500"></i>
