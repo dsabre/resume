@@ -58,8 +58,8 @@ import Contact from "@/components/sections/Contact.vue";
 		this.$root.$on('app-theme', this.themeHandler);
 	},
 	methods: {
-		themeHandler: function (locale) {
-			this.theme = Cookies.get('theme') || locale || this.theme;
+		themeHandler: function (theme) {
+			this.theme = theme || Cookies.get('theme') || this.theme;
 		},
 		localeHandler: function () {
 			const prevLocale = Cookies.get('locale') || this.$i18n.fallbackLocale;

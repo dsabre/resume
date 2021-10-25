@@ -58,13 +58,21 @@
 
 		<div class="grid grid-cols-2 gap-0">
 			<div>
-				<i class="fas fa-sun text-gray-500" data-theme="light" @click="setTheme"></i>
-				<i class="fas fa-moon text-gray-500" data-theme="dark" @click="setTheme"></i>
+				<button class="rounded-full h-8 w-8 items-center justify-center text-gray-300 hover:text-gray-500 hover:bg-gray-300"
+						v-bind:class="{'hidden': theme === 'light'}">
+					<i class="fas fa-sun" data-theme="light" @click="setTheme"></i>
+				</button>
+
+				<button class="rounded-full h-8 w-8 items-center justify-center text-gray-500 hover:bg-gray-300"
+						v-bind:class="{'hidden': theme === 'dark'}"
+				>
+					<i class="fas fa-moon" data-theme="dark" @click="setTheme"></i>
+				</button>
 			</div>
-			<div id="language-selector" class="text-right text-gray-500">
-				<a href="#" class="hover:text-black" data-locale="it" @click="setSiteLanguage">ITA</a>
+			<div id="language-selector" class="text-right text-gray-500 dark:text-gray-300">
+				<a href="#" class="hover:text-black dark:hover:text-white" data-locale="it" @click="setSiteLanguage">ITA</a>
 				|
-				<a href="#" class="hover:text-black" data-locale="en" @click="setSiteLanguage">ENG</a>
+				<a href="#" class="hover:text-black dark:hover:text-white" data-locale="en" @click="setSiteLanguage">ENG</a>
 			</div>
 		</div>
 	</div>
@@ -82,6 +90,11 @@ export default {
 			linkActive: '#home',
 			isScrolling: null
 		};
+	},
+	computed: {
+		theme: function (): string {
+			return this.$parent.$data.theme;
+		}
 	},
 	mounted(): void {
 		this.$root.$on('sidebar-toggle', this.toggle);
@@ -200,7 +213,7 @@ export default {
 			}
 		},
 		setTheme: function (event: PointerEvent): void {
-			Cookies.set('locale', event.target.dataset.theme);
+			Cookies.set('theme', event.target.dataset.theme);
 
 			this.$root.$emit('app-theme', event.target.dataset.theme);
 		}
