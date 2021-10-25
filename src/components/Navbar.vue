@@ -1,11 +1,8 @@
 <template>
-	<nav id="navbar" class="d-flex d-md-none navbar sticky-top">
-		<div class="container-fluid">
-			<!--			<span class="navbar-brand mb-0 h1">Navbar</span>-->
-			<button id="menu-hamburger" class="btn rounded-circle" @click="toggleSidebar">
-				<i class="fas fa-bars"></i>
-			</button>
-		</div>
+	<nav class="tw-flex md:tw-hidden tw-sticky tw-top-0 tw-px-3 tw-py-2">
+		<button class="tw-rounded-full tw-h-10 tw-w-10 tw-flex tw-items-center tw-justify-center" @click="toggleSidebar">
+			<i class="fas fa-bars"></i>
+		</button>
 	</nav>
 </template>
 

@@ -1,10 +1,19 @@
 <template>
-	<section id="home">
+	<section id="home"
+			 class="md:tw-pt-16 md:tw-pl-8 md:tw-h-screen"
+	>
 		<div class="row">
 			<div class="col-md-5">
-				<img src="https://picsum.photos/570/740" alt="">
+				<img src="https://picsum.photos/570/740"
+					 alt=""
+					 class="tw-w-full sm:tw-w-9/12 sm:tw-mx-auto md:tw-w-full"
+				>
 			</div>
 			<div class="col-md-7">
+<!--				<button class="tw-p-2 tw-text-white tw-rounded tw-bg-gradient-to-r tw-from-red-500 tw-to-pink-600 hover:tw-from-red-600 hover:tw-to-pink-700">-->
+<!--					tailwind test-->
+<!--				</button>-->
+
 				<h1 v-html="$t('home.h1')"></h1>
 
 				<Typer/>

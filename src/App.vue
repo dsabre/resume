@@ -5,11 +5,11 @@
 		<div id="content-wrapper" class="d-flex flex-column w-100">
 			<Navbar/>
 
-			<Home/>
-			<About/>
+<!--			<Home/>-->
+<!--			<About/>-->
 			<Resume/>
-			<Skills/>
-			<Contact/>
+<!--			<Skills/>-->
+<!--			<Contact/>-->
 		</div>
 	</div>
 </template>

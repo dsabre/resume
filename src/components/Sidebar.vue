@@ -1,90 +1,70 @@
 <template>
 	<div id="sidebar"
-		 class="d-flex flex-column flex-shrink-0 p-3 min-vh-100 border-end"
-		 v-bind:class="{'closed': closed}"
+		 v-bind:class="{'tw--left-full': closed}"
+		 class="tw-left-0 tw-flex tw-flex-col tw-fixed md:tw-static tw-w-screen md:tw-w-1/4 tw-p-4 tw-min-h-screen md:tw-border-r md:tw-border-gray-300 tw-bg-gray-50 tw-z-10"
 	>
-		<div class="row">
-			<div class="col-10 col-md-12 font-1 fs-4 text-uppercase">
-				{{ $t('sidebar.title') }}
-			</div>
-			<div class="col-2 text-end d-block d-md-none">
-				<i class="fas fa-times cursor-pointer" @click="toggle"></i>
-			</div>
+		<div class="tw-grid tw-grid-cols-2 tw-gap-4">
+			<div class="font-1 tw-uppercase tw-text-2xl">{{ $t('sidebar.title') }}</div>
+			<div class="tw-text-right md:tw-hidden"><i class="fas fa-times cursor-pointer" @click="toggle"></i></div>
 		</div>
 
-		<hr>
-
-		<ul id="menu" class="nav nav-pills flex-column mb-auto">
-			<li class="nav-item mb-1">
+		<ul id="menu" class="tw-mb-auto">
+			<li class="tw-mb-1">
 				<a href="#home"
-				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1 active"
 				   @click="clickNavLink"
-				   aria-current="page"
+				   v-bind:class="{'active': linkActive === '#home'}"
+				   :aria-current="linkActive === '#home' ? 'page' : ''"
 				>
 					{{ $t('sidebar.home') }}
 				</a>
 			</li>
-			<li class="nav-item mb-1">
+			<li class="tw-mb-1">
 				<a href="#about"
-				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
 				   @click="clickNavLink"
+				   v-bind:class="{'active': linkActive === '#about'}"
+				   :aria-current="linkActive === '#about' ? 'page' : ''"
 				>
 					{{ $t('sidebar.about') }}
 				</a>
 			</li>
-			<li class="nav-item mb-1">
+			<li class="tw-mb-1">
 				<a href="#resume"
-				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
 				   @click="clickNavLink"
+				   v-bind:class="{'active': linkActive === '#resume'}"
+				   :aria-current="linkActive === '#resume' ? 'page' : ''"
 				>
 					{{ $t('sidebar.resume') }}
 				</a>
 			</li>
-			<li class="nav-item mb-1">
+			<li class="tw-mb-1">
 				<a href="#skills"
-				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
 				   @click="clickNavLink"
+				   v-bind:class="{'active': linkActive === '#skills'}"
+				   :aria-current="linkActive === '#skills' ? 'page' : ''"
 				>
 					{{ $t('sidebar.skills') }}
 				</a>
 			</li>
-			<li class="nav-item mb-1">
+			<li class="tw-mb-1">
 				<a href="#contact"
-				   class="nav-link text-uppercase border-bottom border-2 rounded-0 fs-5 font-1"
 				   @click="clickNavLink"
+				   v-bind:class="{'active': linkActive === '#contact'}"
+				   :aria-current="linkActive === '#contact' ? 'page' : ''"
 				>
 					{{ $t('sidebar.contact') }}
 				</a>
 			</li>
 		</ul>
 
-		<div class="row">
-			<div id="theme-selector" class="col ms-2">
-				<div class="row w-auto">
-					<div class="col-4 w-auto p-0">
-						<i class="fas fa-sun me-2"></i>
-					</div>
-					<div class="col-4 w-auto p-0">
-						<div class="d-flex form-check form-switch">
-							<input class="form-check-input" type="checkbox" role="switch" disabled>
-						</div>
-					</div>
-					<div class="col-4 w-auto p-0">
-						<i class="fas fa-moon"></i>
-					</div>
-				</div>
+		<div class="tw-grid tw-grid-cols-2 tw-gap-4">
+			<div>
+				<i class="fas fa-sun tw-text-gray-500"></i>
+				<i class="fas fa-moon tw-text-gray-500"></i>
 			</div>
-			<div id="language-selector" class="col text-end">
-				<nav style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb">
-					<ol class="breadcrumb m-0 d-inline-flex">
-						<li class="breadcrumb-item" data-locale="it">
-							<a href="#" class="text-decoration-none" @click="setSiteLanguage('it', $event)">ITA</a>
-						</li>
-						<li class="breadcrumb-item" data-locale="en">
-							<a href="#" class="text-decoration-none" data-locale="en" @click="setSiteLanguage('en', $event)">ENG</a>
-						</li>
-					</ol>
-				</nav>
+			<div id="language-selector" class="tw-text-right tw-text-gray-500">
+				<a href="#" class="hover:tw-text-black" data-locale="it" @click="setSiteLanguage">ITA</a>
+				|
+				<a href="#" class="hover:tw-text-black" data-locale="en" @click="setSiteLanguage">ENG</a>
 			</div>
 		</div>
 	</div>
@@ -99,6 +79,7 @@ export default {
 		return {
 			closed: true,
 			linkClicked: false,
+			linkActive: '#home',
 			isScrolling: null
 		};
 	},
@@ -184,17 +165,25 @@ export default {
 		setLinkClickedFalse: function (): void {
 			this.linkClicked = false;
 		},
-		setSiteLanguage: function (locale: string, event: PointerEvent): void {
+		setSiteLanguage: function (event: PointerEvent): void {
 			event.preventDefault();
+
+			const target = event.target;
+
+			if (!target) {
+				return;
+			}
+
+			const locale = target.dataset.locale.trim();
 
 			this.$i18n.locale = locale;
 
-			this.setLinkLocaleActive(event.target.parentNode);
+			this.setLinkLocaleActive(target);
 
 			Cookies.set('locale', locale);
 		},
-		setLinkLocaleActive: function (newActiveLink: Element): void{
-			const currentActiveLink = document.querySelector('#language-selector li.active');
+		setLinkLocaleActive: function (newActiveLink: Element | EventTarget): void {
+			const currentActiveLink = document.querySelector('[data-locale].active');
 			if (currentActiveLink) {
 				currentActiveLink.removeAttribute('aria-current');
 				currentActiveLink.classList.remove("active");
@@ -204,13 +193,15 @@ export default {
 			newActiveLink.classList.add('active');
 		},
 		setLocale: function (locale: string): void {
-			const newActiveLink = document.querySelector('#language-selector li[data-locale="' + locale + '"]');
-			this.setLinkLocaleActive(newActiveLink);
+			const newActiveLink = document.querySelector('[data-locale="' + locale + '"]');
+
+			if (newActiveLink) {
+				this.setLinkLocaleActive(newActiveLink);
+			}
 		}
 	}
 }
 </script>
 
 <style scoped lang="scss">
-
 </style>

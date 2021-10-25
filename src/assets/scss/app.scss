@@ -1,15 +1,14 @@
 @import "fonts";
-@import "~animate.css";
-@import "~typer-js/dist/typer.min.css";
-@import "~bootstrap/scss/bootstrap";
+@import "libraries";
 @import "utils";
+@import "typography";
 
-@import "themes/light";
+//@import "themes/light";
 
 @import "components/sidebar";
-@import "components/home";
-@import "components/typer";
-@import "components/about";
-@import "components/resume";
-@import "components/skills";
-@import "components/contact";
+//@import "components/home";
+//@import "components/typer";
+//@import "components/about";
+//@import "components/resume";
+//@import "components/skills";
+//@import "components/contact";

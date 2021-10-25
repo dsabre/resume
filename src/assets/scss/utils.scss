@@ -2,25 +2,25 @@
 	cursor: pointer !important;
 }
 
-.page-section{
-	@extend .p-3;
-
-	@include media-breakpoint-up(md) {
-		& {
-			padding-top: 70px !important;
-			height: 100vh;
-		}
-	}
-}
-
-#content-wrapper{
-	@include media-breakpoint-up(md) {
-		& {
-			margin-left: 25%;
-		}
-	}
-}
-
-.white-space{
-	white-space: normal !important;
-}
+//.page-section{
+//	@extend .p-3;
+//
+//	@include media-breakpoint-up(md) {
+//		& {
+//			padding-top: 70px !important;
+//			height: 100vh;
+//		}
+//	}
+//}
+//
+//#content-wrapper{
+//	@include media-breakpoint-up(md) {
+//		& {
+//			margin-left: 25%;
+//		}
+//	}
+//}
+//
+//.white-space{
+//	white-space: normal !important;
+//}
