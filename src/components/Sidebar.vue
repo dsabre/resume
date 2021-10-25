@@ -1,7 +1,7 @@
 <template>
 	<div id="sidebar"
 		 v-bind:class="{'closed': closed}"
-		 class="left-0 flex flex-col fixed md:statica w-screen md:w-1/4 p-4 min-h-screen md:border-r md:border-gray-300 bg-gray-50 z-10"
+		 class="left-0 flex flex-col fixed md:statica w-screen md:w-1/4 p-4 min-h-screen md:border-r md:border-gray-300 bg-gray-50 dark:bg-gray-800 z-10"
 	>
 		<div class="grid grid-cols-2 gap-0">
 			<div class="font-1 uppercase text-2xl">{{ $t('sidebar.title') }}</div>
@@ -58,8 +58,8 @@
 
 		<div class="grid grid-cols-2 gap-0">
 			<div>
-				<i class="fas fa-sun text-gray-500"></i>
-				<i class="fas fa-moon text-gray-500"></i>
+				<i class="fas fa-sun text-gray-500" data-theme="light" @click="setTheme"></i>
+				<i class="fas fa-moon text-gray-500" data-theme="dark" @click="setTheme"></i>
 			</div>
 			<div id="language-selector" class="text-right text-gray-500">
 				<a href="#" class="hover:text-black" data-locale="it" @click="setSiteLanguage">ITA</a>
@@ -198,6 +198,11 @@ export default {
 			if (newActiveLink) {
 				this.setLinkLocaleActive(newActiveLink);
 			}
+		},
+		setTheme: function (event: PointerEvent): void {
+			Cookies.set('locale', event.target.dataset.theme);
+
+			this.$root.$emit('app-theme', event.target.dataset.theme);
 		}
 	}
 }

@@ -23,6 +23,7 @@
 				@apply block;
 				@apply text-xl;
 				@apply p-2;
+				@apply dark:text-white;
 
 				&.active {
 					@apply border-black;

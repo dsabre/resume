@@ -66,17 +66,10 @@
 
 <script lang="ts">
 import Typer from "@/components/Typer.vue";
-import * as bootstrap from "bootstrap";
 
 export default {
 	name: "Home",
-	components: {Typer},
-	mounted(): void {
-		const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-		tooltipTriggerList.map(function (tooltipTriggerEl) {
-			return new bootstrap.Tooltip(tooltipTriggerEl)
-		})
-	}
+	components: {Typer}
 }
 </script>
 
