@@ -1,5 +1,5 @@
 <template>
-	<section id="about">
+	<section id="about" class="page-section">
 		<h1>{{ $t('about.title') }}</h1>
 
 		<p class="tw-my-4" v-html="$t('about.text').join('<br><br>')"></p>

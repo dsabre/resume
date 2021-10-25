@@ -1,7 +1,5 @@
 <template>
-	<section id="home"
-			 class="md:tw-pt-16 md:tw-pl-8 md:tw-h-screen"
-	>
+	<section id="home" class="page-section">
 		<div class="md:tw-grid md:tw-grid-cols-2 md:tw-gap-0">
 			<div>
 				<img src="https://picsum.photos/570/740"
