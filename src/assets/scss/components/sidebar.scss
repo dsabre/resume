@@ -4,6 +4,11 @@
 	-o-transition:      left 0.4s 0s ease;
 	transition:         left 0.4s 0s ease;
 
+	&.closed {
+		@apply tw--left-full;
+		@apply md:tw-left-0;
+	}
+
 	#menu {
 		li {
 			a {
@@ -27,9 +32,9 @@
 		}
 	}
 
-	#language-selector{
-		a{
-			&.active{
+	#language-selector {
+		a {
+			&.active {
 				@apply tw-font-bold;
 				@apply tw-text-black;
 			}

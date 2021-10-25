@@ -1,16 +1,16 @@
-.cursor-pointer{
+.cursor-pointer {
 	cursor: pointer !important;
 }
 
-.page-section{
+.page-section {
 	@apply md:tw-pt-16;
 	@apply md:tw-pl-8;
 	@apply md:tw-h-screen;
 }
 
-#content-wrapper{
-	@screen md{
-		&{
+#content-wrapper {
+	@screen md {
+		& {
 			margin-left: 25%;
 		}
 	}
