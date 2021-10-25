@@ -73,7 +73,7 @@
 
 <script lang="ts">
 import Typer from "@/components/Typer.vue";
-import * as bootstrap from 'bootstrap';
+import * as bootstrap from "bootstrap";
 
 export default {
 	name: "Home",
