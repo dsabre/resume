@@ -2,26 +2,26 @@
 	<section id="about">
 		<h1>{{ $t('about.title') }}</h1>
 
-		<p v-html="$t('about.text').join('<br><br>')"></p>
+		<p class="tw-my-4" v-html="$t('about.text').join('<br><br>')"></p>
 
-		<dl class="row">
-			<dt class="col-4 col-md-3 text-end">{{ $t('about.details.name.label') }}</dt>
-			<dd class="col-8 col-md-9">Daniele</dd>
+		<dl class="tw-grid tw-grid-cols-2 tw-gap-3 tw-w-full md:tw-w-1/2 tw-bg-gray-100 tw-py-3">
+			<dt class="tw-text-right">{{ $t('about.details.name.label') }}</dt>
+			<dd>Daniele</dd>
 
-			<dt class="col-4 col-md-3 text-end">{{ $t('about.details.surname.label') }}</dt>
-			<dd class="col-8 col-md-9">Sabre</dd>
+			<dt class="tw-text-right">{{ $t('about.details.surname.label') }}</dt>
+			<dd>Sabre</dd>
 
-			<dt class="col-4 col-md-3 text-end">{{ $t('about.details.age.label') }}</dt>
-			<dd class="col-8 col-md-9">{{ age }}</dd>
+			<dt class="tw-text-right">{{ $t('about.details.age.label') }}</dt>
+			<dd>{{ age }}</dd>
 
-			<dt class="col-4 col-md-3 text-end">{{ $t('about.details.gender.label') }}</dt>
-			<dd class="col-8 col-md-9">{{ $t('about.details.gender.value') }}</dd>
+			<dt class="tw-text-right">{{ $t('about.details.gender.label') }}</dt>
+			<dd>{{ $t('about.details.gender.value') }}</dd>
 
-			<dt class="col-4 col-md-3 text-end">{{ $t('about.details.nationality.label') }}</dt>
-			<dd class="col-8 col-md-9">{{ $t('about.details.nationality.value') }}</dd>
+			<dt class="tw-text-right">{{ $t('about.details.nationality.label') }}</dt>
+			<dd>{{ $t('about.details.nationality.value') }}</dd>
 
-			<dt class="col-4 col-md-3 text-end">{{ $t('about.details.address.label') }}</dt>
-			<dd class="col-8 col-md-9">{{ $t('about.details.address.value') }}</dd>
+			<dt class="tw-text-right">{{ $t('about.details.address.label') }}</dt>
+			<dd>{{ $t('about.details.address.value') }}</dd>
 		</dl>
 	</section>
 </template>

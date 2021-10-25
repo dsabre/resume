@@ -6,7 +6,7 @@
 			<Navbar/>
 
 <!--			<Home/>-->
-<!--			<About/>-->
+			<About/>
 			<Resume/>
 			<Skills/>
 			<Contact/>
