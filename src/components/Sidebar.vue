@@ -1,15 +1,15 @@
 <template>
 	<div id="sidebar"
 		 v-bind:class="{'closed': closed}"
-		 class="tw-left-0 tw-flex tw-flex-col tw-fixed md:tw-statica tw-w-screen md:tw-w-1/4 tw-p-4 tw-min-h-screen md:tw-border-r md:tw-border-gray-300 tw-bg-gray-50 tw-z-10"
+		 class="left-0 flex flex-col fixed md:statica w-screen md:w-1/4 p-4 min-h-screen md:border-r md:border-gray-300 bg-gray-50 z-10"
 	>
-		<div class="tw-grid tw-grid-cols-2 tw-gap-0">
-			<div class="font-1 tw-uppercase tw-text-2xl">{{ $t('sidebar.title') }}</div>
-			<div class="tw-text-right md:tw-hidden"><i class="fas fa-times cursor-pointer" @click="toggle"></i></div>
+		<div class="grid grid-cols-2 gap-0">
+			<div class="font-1 uppercase text-2xl">{{ $t('sidebar.title') }}</div>
+			<div class="text-right md:hidden"><i class="fas fa-times cursor-pointer" @click="toggle"></i></div>
 		</div>
 
-		<ul id="menu" class="tw-mb-auto">
-			<li class="tw-mb-1">
+		<ul id="menu" class="mb-auto">
+			<li class="mb-1">
 				<a href="#home"
 				   @click="clickNavLink"
 				   v-bind:class="{'active': linkActive === '#home'}"
@@ -18,7 +18,7 @@
 					{{ $t('sidebar.home') }}
 				</a>
 			</li>
-			<li class="tw-mb-1">
+			<li class="mb-1">
 				<a href="#about"
 				   @click="clickNavLink"
 				   v-bind:class="{'active': linkActive === '#about'}"
@@ -27,7 +27,7 @@
 					{{ $t('sidebar.about') }}
 				</a>
 			</li>
-			<li class="tw-mb-1">
+			<li class="mb-1">
 				<a href="#resume"
 				   @click="clickNavLink"
 				   v-bind:class="{'active': linkActive === '#resume'}"
@@ -36,7 +36,7 @@
 					{{ $t('sidebar.resume') }}
 				</a>
 			</li>
-			<li class="tw-mb-1">
+			<li class="mb-1">
 				<a href="#skills"
 				   @click="clickNavLink"
 				   v-bind:class="{'active': linkActive === '#skills'}"
@@ -45,7 +45,7 @@
 					{{ $t('sidebar.skills') }}
 				</a>
 			</li>
-			<li class="tw-mb-1">
+			<li class="mb-1">
 				<a href="#contact"
 				   @click="clickNavLink"
 				   v-bind:class="{'active': linkActive === '#contact'}"
@@ -56,15 +56,15 @@
 			</li>
 		</ul>
 
-		<div class="tw-grid tw-grid-cols-2 tw-gap-0">
+		<div class="grid grid-cols-2 gap-0">
 			<div>
-				<i class="fas fa-sun tw-text-gray-500"></i>
-				<i class="fas fa-moon tw-text-gray-500"></i>
+				<i class="fas fa-sun text-gray-500"></i>
+				<i class="fas fa-moon text-gray-500"></i>
 			</div>
-			<div id="language-selector" class="tw-text-right tw-text-gray-500">
-				<a href="#" class="hover:tw-text-black" data-locale="it" @click="setSiteLanguage">ITA</a>
+			<div id="language-selector" class="text-right text-gray-500">
+				<a href="#" class="hover:text-black" data-locale="it" @click="setSiteLanguage">ITA</a>
 				|
-				<a href="#" class="hover:tw-text-black" data-locale="en" @click="setSiteLanguage">ENG</a>
+				<a href="#" class="hover:text-black" data-locale="en" @click="setSiteLanguage">ENG</a>
 			</div>
 		</div>
 	</div>

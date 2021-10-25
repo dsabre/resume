@@ -1,8 +1,8 @@
 <template>
-	<div id="app" class="tw-flex">
+	<div id="app" class="flex">
 		<Sidebar/>
 
-		<div id="content-wrapper" class="tw-flex tw-flex-col tw-w-full">
+		<div id="content-wrapper" class="flex flex-col w-full">
 			<Navbar/>
 
 			<Home/>

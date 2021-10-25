@@ -1,5 +1,5 @@
 <template>
-	<section id="skills" class="page-section tw-bg-blue-500">
+	<section id="skills" class="page-section bg-blue-500">
 		<h1>Skills</h1>
 	</section>
 </template>

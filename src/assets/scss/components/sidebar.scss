@@ -5,28 +5,28 @@
 	transition:         left 0.4s 0s ease;
 
 	&.closed {
-		@apply tw--left-full;
-		@apply md:tw-left-0;
+		@apply -left-full;
+		@apply md:left-0;
 	}
 
 	#menu {
 		li {
 			a {
-				@apply tw-text-center;
-				@apply md:tw-text-right;
-				@apply tw-uppercase;
+				@apply text-center;
+				@apply md:text-right;
+				@apply uppercase;
 				@apply font-1;
-				@apply tw-border-b-2;
-				@apply tw-border-gray-300;
-				@apply hover:tw-border-black;
-				@apply tw-text-black;
-				@apply tw-block;
-				@apply tw-text-xl;
-				@apply tw-p-2;
+				@apply border-b-2;
+				@apply border-gray-300;
+				@apply hover:border-black;
+				@apply text-black;
+				@apply block;
+				@apply text-xl;
+				@apply p-2;
 
 				&.active {
-					@apply tw-border-black;
-					@apply tw-bg-gray-300;
+					@apply border-black;
+					@apply bg-gray-300;
 				}
 			}
 		}
@@ -35,8 +35,8 @@
 	#language-selector {
 		a {
 			&.active {
-				@apply tw-font-bold;
-				@apply tw-text-black;
+				@apply font-bold;
+				@apply text-black;
 			}
 		}
 	}

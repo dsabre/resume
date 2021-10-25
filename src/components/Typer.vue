@@ -1,5 +1,5 @@
 <template>
-	<p id="typer" ref="typer" class="tw-text-4xl tw-h-12 font-2"></p>
+	<p id="typer" ref="typer" class="text-4xl h-12 font-2"></p>
 </template>
 
 <script lang="ts">
@@ -18,31 +18,31 @@ export default {
 			},
 			phrases: [
 				{
-					html: 'Web <span class="tw-text-blue-500">Developer</span>',
+					html: 'Web <span class="text-blue-500">Developer</span>',
 					back: [-4, 120],
 					function: 'line',
 					pause: 1000
 				},
 				{
-					html: '<span class="tw-text-indigo-500">Designer</span>',
+					html: '<span class="text-indigo-500">Designer</span>',
 					back: ['all', 100],
 					function: 'continue',
 					pause: 1000
 				},
 				{
-					html: '<span class="tw-text-yellow-500">Frontend</span> Developer',
+					html: '<span class="text-yellow-500">Frontend</span> Developer',
 					back: ['all', 80],
 					function: 'line',
 					pause: 1000
 				},
 				{
-					html: '<span class="tw-font-mono tw-bg-black tw-text-green-400">Programmer</span>',
+					html: '<span class="font-mono bg-black text-green-400">Programmer</span>',
 					back: ['all', 100],
 					function: 'line',
 					pause: 2000
 				},
 				{
-					html: '<span class="tw-text-pink-500">Gamer! <span class="tw-inline-block animate__animated animate__backInDown"><span class="tw-inline-block font-invaders animate__animated animate__tada animate__delay-2s">B</span></span></span>',
+					html: '<span class="text-pink-500">Gamer! <span class="inline-block animate__animated animate__backInDown"><span class="inline-block font-invaders animate__animated animate__tada animate__delay-2s">B</span></span></span>',
 					back: ['all', 110],
 					function: 'line',
 					pause: 3000

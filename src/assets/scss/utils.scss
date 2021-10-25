@@ -7,10 +7,10 @@ html {
 }
 
 .page-section {
-	@apply tw-p-3;
-	@apply md:tw-pt-16;
-	@apply md:tw-pl-8;
-	@apply md:tw-h-screen;
+	@apply p-3;
+	@apply md:pt-16;
+	@apply md:pl-8;
+	@apply md:h-screen;
 }
 
 #content-wrapper {
