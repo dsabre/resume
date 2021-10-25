@@ -2,25 +2,20 @@
 	cursor: pointer !important;
 }
 
-//.page-section{
-//	@extend .p-3;
-//
-//	@include media-breakpoint-up(md) {
-//		& {
-//			padding-top: 70px !important;
-//			height: 100vh;
-//		}
-//	}
-//}
-//
-//#content-wrapper{
-//	@include media-breakpoint-up(md) {
-//		& {
-//			margin-left: 25%;
-//		}
-//	}
-//}
-//
+.page-section{
+	@apply md:tw-pt-16;
+	@apply md:tw-pl-8;
+	@apply md:tw-h-screen;
+}
+
+#content-wrapper{
+	@screen md{
+		&{
+			margin-left: 25%;
+		}
+	}
+}
+
 //.white-space{
 //	white-space: normal !important;
 //}

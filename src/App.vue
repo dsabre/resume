@@ -1,15 +1,15 @@
 <template>
-	<div id="app" class="d-flex">
+	<div id="app" class="tw-flex">
 		<Sidebar/>
 
-		<div id="content-wrapper" class="d-flex flex-column w-100">
+		<div id="content-wrapper" class="tw-flex tw-flex-col tw-w-full">
 			<Navbar/>
 
 <!--			<Home/>-->
 <!--			<About/>-->
 			<Resume/>
-<!--			<Skills/>-->
-<!--			<Contact/>-->
+			<Skills/>
+			<Contact/>
 		</div>
 	</div>
 </template>

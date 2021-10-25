@@ -1,7 +1,7 @@
 <template>
 	<div id="sidebar"
 		 v-bind:class="{'tw--left-full': closed}"
-		 class="tw-left-0 tw-flex tw-flex-col tw-fixed md:tw-static tw-w-screen md:tw-w-1/4 tw-p-4 tw-min-h-screen md:tw-border-r md:tw-border-gray-300 tw-bg-gray-50 tw-z-10"
+		 class="tw-left-0 tw-flex tw-flex-col tw-fixed md:tw-statica tw-w-screen md:tw-w-1/4 tw-p-4 tw-min-h-screen md:tw-border-r md:tw-border-gray-300 tw-bg-gray-50 tw-z-10"
 	>
 		<div class="tw-grid tw-grid-cols-2 tw-gap-4">
 			<div class="font-1 tw-uppercase tw-text-2xl">{{ $t('sidebar.title') }}</div>
@@ -77,7 +77,7 @@ export default {
 	name: "Sidebar",
 	data: function (): unknown {
 		return {
-			closed: true,
+			closed: false,
 			linkClicked: false,
 			linkActive: '#home',
 			isScrolling: null
