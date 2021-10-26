@@ -24,31 +24,31 @@
 			<dd>{{ $t('about.details.address.value') }}</dd>
 		</dl>
 
-		<h2 class="mt-5 mb-1">My Interests</h2>
+		<h2 class="mt-5 mb-1">{{ $t('about.interests.title') }}</h2>
 		<div class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-			<div class="p-3 text-center bg-gray-50 ring ring-pink-200 rounded-sm shadow">
+			<div class="p-3 text-center bg-gray-50 ring ring-pink-200 shadow">
 				<i class="fas fa-headset fa-2x block"></i>
-				<span class="font-2">Gaming</span>
+				<span class="font-2">{{ $t('about.interests.items.gaming') }}</span>
 			</div>
-			<div class="p-3 text-center bg-gray-50 ring ring-green-200 rounded-sm shadow">
+			<div class="p-3 text-center bg-gray-50 ring ring-green-200 shadow">
 				<i class="fas fa-code fa-2x block"></i>
-				<span class="font-2">Coding</span>
+				<span class="font-2">{{ $t('about.interests.items.coding') }}</span>
 			</div>
-			<div class="p-3 text-center bg-gray-50 ring ring-blue-200 rounded-sm shadow">
+			<div class="p-3 text-center bg-gray-50 ring ring-blue-200 shadow">
 				<i class="fas fa-camera fa-2x block"></i>
-				<span class="font-2">Photography</span>
+				<span class="font-2">{{ $t('about.interests.items.photography') }}</span>
 			</div>
-			<div class="p-3 text-center bg-gray-50 ring ring-yellow-200 rounded-sm shadow">
+			<div class="p-3 text-center bg-gray-50 ring ring-yellow-200 shadow">
 				<i class="fas fa-home fa-2x block"></i>
-				<span class="font-2">Anime</span>
+				<span class="font-2">{{ $t('about.interests.items.anime') }}</span>
 			</div>
-			<div class="p-3 text-center bg-gray-50 ring ring-red-200 rounded-sm shadow">
+			<div class="p-3 text-center bg-gray-50 ring ring-red-200 shadow">
 				<i class="fas fa-tv fa-2x block"></i>
-				<span class="font-2">TV series</span>
+				<span class="font-2">{{ $t('about.interests.items.tvSeries') }}</span>
 			</div>
-			<div class="p-3 text-center bg-gray-50 ring ring-gray-200 rounded-sm shadow">
+			<div class="p-3 text-center bg-gray-50 ring ring-gray-200 shadow">
 				<i class="fas fa-film fa-2x block"></i>
-				<span class="font-2">Films</span>
+				<span class="font-2">{{ $t('about.interests.items.films') }}</span>
 			</div>
 		</div>
 	</section>

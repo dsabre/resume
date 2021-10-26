@@ -8,7 +8,7 @@
 				>
 			</div>
 			<div class="md:pl-3">
-				<h1 v-html="$t('home.h1')"></h1>
+				<h1 v-html="$t('home.title')"></h1>
 
 				<Typer class="my-3"/>
 

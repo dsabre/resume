@@ -8,16 +8,16 @@
         "contact": "Contact"
     },
     "home":    {
-        "h1":     "Hello,<br>I Am Daniele Sabre",
+        "title":  "Hello,<br>I Am Daniele Sabre",
         "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus aliquet erat, ut tristique mauris dignissim faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
     },
     "about":   {
-        "title":   "About Me",
-        "text":    [
+        "title":     "About Me",
+        "text":      [
             "Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.",
             "Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus."
         ],
-        "details": {
+        "details":   {
             "name":        {
                 "label": "Name"
             },
@@ -39,6 +39,40 @@
                 "label": "Address",
                 "value": "Turin"
             }
+        },
+        "interests": {
+            "title": "My Interests",
+            "items": {
+                "gaming":      "Gaming",
+                "coding":      "Coding",
+                "photography": "Photography",
+                "anime":       "Anime",
+                "tvSeries":    "TV series",
+                "films":       "Films"
+            }
+        }
+    },
+    "resume":  {
+        "title":       "Resume",
+        "experiences": {
+            "title": "Experience",
+            "items": [
+                {
+                    "period": "2018 - Present",
+                    "name":   "Web Developer <span class=\"place open-sans-font\">Envato</span>",
+                    "text":   "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit"
+                }
+            ]
+        },
+        "education":   {
+            "title": "Education",
+            "items": [
+                {
+                    "period": "2018 - Present",
+                    "name":   "Web Developer <span class=\"place open-sans-font\">Envato</span>",
+                    "text":   "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit"
+                }
+            ]
         }
     }
 }
