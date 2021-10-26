@@ -18,9 +18,9 @@
 				></span>
 
 				<div class="relative">
-					<div class="overflow-hidden h-4 md:h-6 text-xs flex rounded-full bg-purple-200 shadow-sm border">
+					<div class="overflow-hidden h-4 md:h-6 text-xs flex rounded-full bg-gray-200 shadow-sm border">
 						<div ref="skill" :data-index="index" :style="'width:0%;transition-delay: ' + (delay + delay * index) + 'ms;'"
-							 class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-500 transition-all duration-1000 ease-in-out"
+							 class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-blue-500 to-green-500 transition-all duration-1000 ease-in-out"
 						>
 							<span>{{ item[1] }}%</span>
 						</div>
