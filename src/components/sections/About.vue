@@ -1,8 +1,8 @@
 <template>
 	<section id="about" class="page-section">
-		<h1>{{ $t('about.title') }}</h1>
+		<h1 class="mb-3">{{ $t('about.title') }}</h1>
 
-		<p class="my-4" v-html="$t('about.text').join('<br><br>')"></p>
+		<p class="mb-3" v-html="$t('about.text').join('<br><br>')"></p>
 
 		<dl class="grid grid-cols-2 gap-3 w-full md:w-1/2 bg-gray-100 py-3 border">
 			<dt class="text-right">{{ $t('about.details.name.label') }}</dt>
