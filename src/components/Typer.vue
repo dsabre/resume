@@ -2,7 +2,7 @@
 	<p id="typer" ref="typer" class="text-4xl h-12 font-2"></p>
 </template>
 
-<script lang="ts">
+<script>
 import typer from 'typer-js';
 
 /**
@@ -10,7 +10,7 @@ import typer from 'typer-js';
  */
 export default {
 	name: "Typer",
-	data(): unknown {
+	data() {
 		return {
 			options: {
 				min: 80,
@@ -50,7 +50,7 @@ export default {
 			]
 		}
 	},
-	mounted(): void {
+	mounted() {
 		const handler = typer(this.$refs.typer, this.options);
 
 		if (this.phrases.length > 1) {

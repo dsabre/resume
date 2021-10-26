@@ -60,8 +60,8 @@
 	</section>
 </template>
 
-<script lang="ts">
-import Typer from "@/components/Typer.vue";
+<script>
+import Typer from "../Typer";
 
 export default {
 	name: "Home",

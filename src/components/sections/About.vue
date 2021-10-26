@@ -26,11 +26,11 @@
 	</section>
 </template>
 
-<script lang="ts">
+<script>
 export default {
 	name: "About",
 	computed: {
-		age: function (): number {
+		age: function () {
 			const ageDifMs = Date.now() - 529369200000;
 			const ageDate = new Date(ageDifMs);
 			return Math.abs(ageDate.getUTCFullYear() - 1970);

@@ -6,11 +6,11 @@
 	</nav>
 </template>
 
-<script lang="ts">
+<script>
 export default {
 	name:    "Navbar",
 	methods: {
-		toggleSidebar: function (): void {
+		toggleSidebar: function () {
 			this.$root.$emit('sidebar-toggle');
 		}
 	}

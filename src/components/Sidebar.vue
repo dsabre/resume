@@ -78,12 +78,12 @@
 	</div>
 </template>
 
-<script lang="ts">
+<script>
 import Cookies from 'js-cookie'
 
 export default {
 	name: "Sidebar",
-	data: function (): unknown {
+	data: function () {
 		return {
 			closed: true,
 			linkClicked: false,
@@ -92,11 +92,11 @@ export default {
 		};
 	},
 	computed: {
-		theme: function (): string {
+		theme: function () {
 			return this.$parent.$data.theme;
 		}
 	},
-	mounted(): void {
+	mounted() {
 		this.$root.$on('sidebar-toggle', this.toggle);
 		this.$root.$on('sidebar-locale', this.setLocale);
 
@@ -104,22 +104,20 @@ export default {
 		this.scrollspy();
 	},
 	methods: {
-		toggle: function (): void {
+		toggle: function () {
 			this.closed = !this.closed;
 		},
-		close: function (): void {
+		close: function () {
 			this.closed = true;
 		},
-		clickNavLink: function (event: PointerEvent): void {
+		clickNavLink: function (event) {
 			this.linkClicked = true;
 
-			const newActiveLink = event.target as Element;
-
-			this.setLinkActive(newActiveLink);
+			this.setLinkActive(event.target);
 
 			this.close();
 		},
-		setLinkActive: function (newActiveLink: Element): void {
+		setLinkActive: function (newActiveLink) {
 			const currentActiveLink = document.querySelector('#menu li a.active');
 
 			if (currentActiveLink) {
@@ -130,7 +128,7 @@ export default {
 			newActiveLink.setAttribute('aria-current', 'page');
 			newActiveLink.classList.add('active');
 		},
-		initLinkActive: function (): void {
+		initLinkActive: function () {
 			// onload check if a section is requested, if so, set the corrispondent link nav active
 			if (window.location.hash) {
 				const newActiveLink = document.querySelector('#menu li a[href="' + window.location.hash + '"]');
@@ -139,9 +137,9 @@ export default {
 				}
 			}
 		},
-		scrollspy: function (): void {
+		scrollspy: function () {
 			const section = document.querySelectorAll("section");
-			const sections: Record<string, number> = {};
+			const sections = {};
 
 			for (let i = 0; i < section.length; i++) {
 				sections[section[i].id] = section[i].offsetTop;
@@ -175,10 +173,10 @@ export default {
 				}
 			});
 		},
-		setLinkClickedFalse: function (): void {
+		setLinkClickedFalse: function () {
 			this.linkClicked = false;
 		},
-		setSiteLanguage: function (event: PointerEvent): void {
+		setSiteLanguage: function (event) {
 			event.preventDefault();
 
 			const target = event.target;
@@ -195,7 +193,7 @@ export default {
 
 			Cookies.set('locale', locale);
 		},
-		setLinkLocaleActive: function (newActiveLink: Element | EventTarget): void {
+		setLinkLocaleActive: function (newActiveLink) {
 			const currentActiveLink = document.querySelector('[data-locale].active');
 			if (currentActiveLink) {
 				currentActiveLink.removeAttribute('aria-current');
@@ -205,17 +203,23 @@ export default {
 			newActiveLink.setAttribute('aria-current', 'page');
 			newActiveLink.classList.add('active');
 		},
-		setLocale: function (locale: string): void {
+		setLocale: function (locale) {
 			const newActiveLink = document.querySelector('[data-locale="' + locale + '"]');
 
 			if (newActiveLink) {
 				this.setLinkLocaleActive(newActiveLink);
 			}
 		},
-		setTheme: function (event: PointerEvent): void {
-			Cookies.set('theme', event.target.dataset.theme);
+		setTheme: function (event) {
+			if (!(event.target instanceof HTMLElement)) {
+				return;
+			}
 
-			this.$root.$emit('app-theme', event.target.dataset.theme);
+			const theme = event.target.dataset.theme || 'light';
+
+			Cookies.set('theme', theme);
+
+			this.$root.$emit('app-theme', theme);
 		}
 	}
 }
