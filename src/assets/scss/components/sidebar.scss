@@ -23,11 +23,14 @@
 				@apply block;
 				@apply text-xl;
 				@apply p-2;
-				@apply dark:text-white;
+				@apply dark:text-gray-100;
+				@apply dark:hover:border-pink-500;
 
 				&.active {
 					@apply border-black;
 					@apply bg-gray-300;
+					@apply dark:bg-gray-600;
+					@apply dark:border-pink-500;
 				}
 			}
 		}
@@ -38,7 +41,7 @@
 			&.active {
 				@apply font-bold;
 				@apply text-black;
-				@apply dark:text-white;
+				@apply dark:text-gray-100;
 			}
 		}
 	}

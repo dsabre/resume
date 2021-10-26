@@ -1,11 +1,11 @@
 <template>
 	<div id="sidebar"
 		 v-bind:class="{'closed': closed}"
-		 class="left-0 flex flex-col fixed md:statica w-screen md:w-1/4 p-4 min-h-screen md:border-r md:border-gray-300 bg-gray-50 dark:bg-gray-800 z-10"
+		 class="left-0 flex flex-col fixed md:statica w-screen md:w-1/4 p-4 min-h-screen md:border-r md:border-gray-300 md:dark:border-gray-600 bg-gray-50 dark:bg-gray-800 z-10"
 	>
 		<div class="grid grid-cols-2 gap-0">
-			<div class="font-1 text-2xl">{{ $t('sidebar.title') }}</div>
-			<div class="text-right md:hidden"><i class="fas fa-times cursor-pointer" @click="toggle"></i></div>
+			<div class="font-1 text-2xl dark:text-gray-100">{{ $t('sidebar.title') }}</div>
+			<div class="text-right md:hidden dark:text-gray-100"><i class="fas fa-times cursor-pointer" @click="toggle"></i></div>
 		</div>
 
 		<ul id="menu" class="mb-auto">
@@ -70,9 +70,9 @@
 				</button>
 			</div>
 			<div id="language-selector" class="text-right text-gray-500 dark:text-gray-300">
-				<a href="#" class="hover:text-black dark:hover:text-white" data-locale="it" @click="setSiteLanguage">ITA</a>
+				<a href="#" class="hover:text-black dark:hover:text-gray-100" data-locale="it" @click="setSiteLanguage">ITA</a>
 				|
-				<a href="#" class="hover:text-black dark:hover:text-white" data-locale="en" @click="setSiteLanguage">ENG</a>
+				<a href="#" class="hover:text-black dark:hover:text-gray-100" data-locale="en" @click="setSiteLanguage">ENG</a>
 			</div>
 		</div>
 	</div>

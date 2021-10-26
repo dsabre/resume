@@ -8,24 +8,24 @@
 				>
 			</div>
 			<div class="md:pl-3">
-				<h1 v-html="$t('home.title')"></h1>
+				<h1 class="dark:text-gray-100" v-html="$t('home.title')"></h1>
 
-				<Typer class="my-3"/>
+				<Typer class="my-3 dark:text-gray-100"/>
 
-				<p class="my-3">{{ $t('home.teaser') }}</p>
+				<p class="my-3 dark:text-gray-100">{{ $t('home.teaser') }}</p>
 
 				<div class="text-center md:text-left">
 					<a href="#"
 					   target="_blank"
 					   title="Facebook"
-					   class="text-facebook md:text-gray-600 md:hover:text-facebook"
+					   class="text-facebook md:text-gray-600 md:dark:text-gray-400 md:hover:text-facebook"
 					>
 						<i class="fab fa-facebook-f fa-2x"></i>
 					</a>
 
 					<a href="#"
 					   target="_blank"
-					   class="ml-3 text-linkedin md:text-gray-600 md:hover:text-linkedin"
+					   class="ml-3 text-linkedin md:text-gray-600 md:dark:text-gray-400 md:hover:text-linkedin"
 					   title="LinkedIn"
 					>
 						<i class="fab fa-linkedin-in fa-2x"></i>
@@ -33,7 +33,7 @@
 
 					<a href="#"
 					   target="_blank"
-					   class="ml-3 text-twitter md:text-gray-600 md:hover:text-twitter"
+					   class="ml-3 text-twitter md:text-gray-600 md:dark:text-gray-400 md:hover:text-twitter"
 					   title="Twitter"
 					>
 						<i class="fab fa-twitter fa-2x"></i>
@@ -41,7 +41,7 @@
 
 					<a href="#"
 					   target="_blank"
-					   class="ml-3 text-instagram md:text-gray-600 md:hover:text-instagram"
+					   class="ml-3 text-instagram md:text-gray-600 md:dark:text-gray-400 md:hover:text-instagram"
 					   title="Instagram"
 					>
 						<i class="fab fa-instagram fa-2x"></i>
@@ -49,7 +49,7 @@
 
 					<a href="#"
 					   target="_blank"
-					   class="ml-3 text-github md:text-gray-600 md:hover:text-github"
+					   class="ml-3 text-github md:text-gray-600 md:dark:text-gray-400 md:hover:text-github"
 					   title="GitHub"
 					>
 						<i class="fab fa-github fa-2x"></i>

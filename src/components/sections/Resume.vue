@@ -1,10 +1,10 @@
 <template>
 	<section id="resume" class="page-section">
-		<h1 class="mb-3">{{ $t('resume.title') }}</h1>
+		<h1 class="mb-3 dark:text-gray-100">{{ $t('resume.title') }}</h1>
 
 		<div class="grid grid-cols-1 md:grid-cols-2">
 			<div class="md:pr-12">
-				<h2>{{ $t('resume.experiences.title') }}</h2>
+				<h2 class="dark:text-gray-100">{{ $t('resume.experiences.title') }}</h2>
 				<ul>
 					<li v-for="(item, index) in $t('resume.experiences.items')" :key="index" class="bg-gray-50 border mb-3">
 						<div class="flex justify-start">
@@ -23,7 +23,7 @@
 			<div class="md:pr-12">
 				<hr class="my-3 md:hidden">
 
-				<h2>{{ $t('resume.education.title') }}</h2>
+				<h2 class="dark:text-gray-100">{{ $t('resume.education.title') }}</h2>
 				<ul>
 					<li v-for="(item, index) in $t('resume.education.items')" :key="index" class="bg-gray-50 border mb-3">
 						<div class="flex justify-start">

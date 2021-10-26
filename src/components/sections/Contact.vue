@@ -1,6 +1,6 @@
 <template>
 	<section id="contact" class="page-section">
-		<h1 class="mb-3">Contact</h1>
+		<h1 class="mb-3 dark:text-gray-100">Contact</h1>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-2 h-4/5">
 			<div class="hidden md:block">
@@ -11,21 +11,21 @@
 				></iframe>
 			</div>
 			<div>
-				<h2>Get in touch</h2>
+				<h2 class="dark:text-gray-100">Get in touch</h2>
 				<form v-on:submit="sendMessage"
 					  v-bind:class="{'cursor-wait': sending}"
 				>
 					<input v-model="name"
 						   type="text"
 						   placeholder="Name *"
-						   class="py-3 px-4 bg-gray-50 border rounded-lg placeholder-gray-400 text-gray-900 appearance-none inline-block w-full shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-pink-500"
+						   class="py-3 px-4 bg-gray-50 dark:bg-gray-300 border rounded-lg placeholder-gray-400 text-gray-900 appearance-none inline-block w-full shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-pink-500"
 						   required
 						   :disabled="sending"
 						   v-bind:class="{'cursor-wait': sending}"
 					>
 					<textarea v-model="message"
 							  rows="10"
-							  class="py-3 px-4 bg-gray-50 border rounded-lg placeholder-gray-400 text-gray-900 appearance-none inline-block w-full shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-pink-500 mt-3"
+							  class="py-3 px-4 bg-gray-50 dark:bg-gray-300 border rounded-lg placeholder-gray-400 text-gray-900 appearance-none inline-block w-full shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-pink-500 mt-3"
 							  placeholder="Message *"
 							  required
 							  :disabled="sending"
@@ -33,9 +33,9 @@
 					></textarea>
 
 					<button type="submit"
-							class="bg-gradient-to-r from-blue-500 to-green-500 dark:from-red-500 dark:to-pink-500 disabled:opacity-50 text-white p-3 rounded-lg w-full mt-3"
+							class="bg-gradient-to-r from-blue-500 to-green-500 dark:from-red-400 dark:to-pink-500 disabled:opacity-50 text-white p-3 rounded-lg w-full mt-3"
 							:disabled="!canSubmit"
-							v-bind:class="{'hover:from-blue-600 hover:to-green-600 dark:hover:from-red-600 dark:hover:to-pink-600': canSubmit, 'cursor-wait': sending}"
+							v-bind:class="{'hover:from-blue-600 hover:to-green-600 dark:hover:from-red-500 dark:hover:to-pink-600': canSubmit, 'cursor-wait': sending}"
 					>
 						<i v-show="sending" class="fas fa-circle-notch fa-spin"></i>
 						Send message

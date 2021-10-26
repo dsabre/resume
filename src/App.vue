@@ -3,7 +3,7 @@
 		<div class="flex" :class="theme">
 			<Sidebar/>
 
-			<div id="content-wrapper" class="flex flex-col w-full">
+			<div id="content-wrapper" class="flex flex-col w-full dark:bg-gray-700">
 				<Navbar/>
 
 				<Home/>

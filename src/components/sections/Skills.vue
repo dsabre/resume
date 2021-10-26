@@ -1,13 +1,13 @@
 <template>
 	<section id="skills" class="page-section">
-		<h1 class="mb-3">{{ $t('skills.title') }}</h1>
+		<h1 class="mb-3 dark:text-gray-100">{{ $t('skills.title') }}</h1>
 
 		<div class="grid grid-cols-1 md:grid-cols-1 md:gap-5">
 			<div v-for="(item, index) in skills" :key="index" class="mt-2 md:mt-0">
 				<a v-if="!!item[2]"
 				   :href="item[2]"
 				   target="_blank"
-				   class="hidden md:inline"
+				   class="hidden md:inline dark:text-gray-100"
 				>
 					<span v-html="item[0]"></span>
 					<i class="ml-2 fas fa-external-link-alt"></i>
@@ -15,12 +15,13 @@
 
 				<span v-bind:class="{'inline md:hidden': !!item[2]}"
 					  v-html="item[0]"
+					  class="dark:text-gray-100"
 				></span>
 
 				<div class="relative">
 					<div class="overflow-hidden h-4 md:h-6 text-xs flex rounded-full bg-gray-200 shadow-sm border">
 						<div ref="skill" :data-index="index" :style="'width:0%;transition-delay: ' + (delay + delay * index) + 'ms;'"
-							 class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-blue-500 to-green-500 transition-all duration-1000 ease-in-out"
+							 class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-blue-500 to-green-500 dark:from-red-400 dark:to-pink-500 transition-all duration-1000 ease-in-out"
 						>
 							<span>{{ item[1] }}%</span>
 						</div>
