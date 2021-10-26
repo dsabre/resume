@@ -7,13 +7,13 @@
 				<Navbar/>
 
 				<Home/>
-				<hr class="my-3 md:hidden">
+				<hr class="my-3 md:hidden dark:border-gray-600">
 				<About/>
-				<hr class="my-3 md:hidden">
+				<hr class="my-3 md:hidden dark:border-gray-600">
 				<Resume/>
-				<hr class="my-3 md:hidden">
+				<hr class="my-3 md:hidden dark:border-gray-600">
 				<Skills/>
-				<hr class="my-3 md:hidden">
+				<hr class="my-3 md:hidden dark:border-gray-600">
 				<Contact/>
 			</div>
 		</div>

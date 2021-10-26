@@ -4,24 +4,24 @@
 
 		<p class="mb-3 dark:text-gray-100" v-html="$t('about.text').join('<br><br>')"></p>
 
-		<dl class="grid grid-cols-2 gap-3 w-full md:w-1/2 bg-gray-100 dark:bg-gray-500 py-3 border dark:border-gray-400">
-			<dt class="text-right">{{ $t('about.details.name.label') }}</dt>
-			<dd>Daniele</dd>
+		<dl class="grid grid-cols-2 gap-3 w-full md:w-1/2 bg-gray-100 dark:bg-gray-600 py-3 border dark:border-gray-500">
+			<dt class="text-right dark:text-gray-100">{{ $t('about.details.name.label') }}</dt>
+			<dd class="dark:text-gray-100">Daniele</dd>
 
-			<dt class="text-right">{{ $t('about.details.surname.label') }}</dt>
-			<dd>Sabre</dd>
+			<dt class="text-right dark:text-gray-100">{{ $t('about.details.surname.label') }}</dt>
+			<dd class="dark:text-gray-100">Sabre</dd>
 
-			<dt class="text-right">{{ $t('about.details.age.label') }}</dt>
-			<dd>{{ age }}</dd>
+			<dt class="text-right dark:text-gray-100">{{ $t('about.details.age.label') }}</dt>
+			<dd class="dark:text-gray-100">{{ age }}</dd>
 
-			<dt class="text-right">{{ $t('about.details.gender.label') }}</dt>
-			<dd>{{ $t('about.details.gender.value') }}</dd>
+			<dt class="text-right dark:text-gray-100">{{ $t('about.details.gender.label') }}</dt>
+			<dd class="dark:text-gray-100">{{ $t('about.details.gender.value') }}</dd>
 
-			<dt class="text-right">{{ $t('about.details.nationality.label') }}</dt>
-			<dd>{{ $t('about.details.nationality.value') }}</dd>
+			<dt class="text-right dark:text-gray-100">{{ $t('about.details.nationality.label') }}</dt>
+			<dd class="dark:text-gray-100">{{ $t('about.details.nationality.value') }}</dd>
 
-			<dt class="text-right">{{ $t('about.details.address.label') }}</dt>
-			<dd>{{ $t('about.details.address.value') }}</dd>
+			<dt class="text-right dark:text-gray-100">{{ $t('about.details.address.label') }}</dt>
+			<dd class="dark:text-gray-100">{{ $t('about.details.address.value') }}</dd>
 		</dl>
 
 		<h2 class="mt-5 mb-1 dark:text-gray-100">{{ $t('about.interests.title') }}</h2>
