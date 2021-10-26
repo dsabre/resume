@@ -4,7 +4,7 @@
         "home":    "Home",
         "about":   "Mi presento",
         "resume":  "Riepilogo",
-        "skills":  "Abilità",
+        "skills":  "Competenze",
         "contact": "Contatti"
     },
     "home":    {
@@ -76,6 +76,6 @@
         }
     },
     "skills":  {
-        "title": "Abilità"
+        "title": "Competenze"
     }
 }
