@@ -58,7 +58,7 @@
             "title": "Esperienze",
             "items": [
                 {
-                    "period": "2018 - Present",
+                    "period": "2018 - presente",
                     "name":   "Web Developer <span class=\"place open-sans-font\">Envato</span>",
                     "text":   "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit"
                 }
@@ -68,7 +68,7 @@
             "title": "Educazione",
             "items": [
                 {
-                    "period": "2018 - Present",
+                    "period": "2018 - presente",
                     "name":   "Web Developer <span class=\"place open-sans-font\">Envato</span>",
                     "text":   "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit"
                 }
