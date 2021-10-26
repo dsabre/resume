@@ -4,7 +4,12 @@
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-2 h-4/5">
 			<div class="hidden md:block">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2820.9300148607927!2d7.530606815922572!3d45.00604307909828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478815a4f1bd244d%3A0x22db17216066c657!2sVia%20Cesare%20Cervetti%2C%206%2C%2010043%20Orbassano%20TO!5e0!3m2!1sit!2sit!4v1635266936944!5m2!1sit!2sit"
+				<iframe v-if="this.$parent.$data.theme === 'dark'" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3489.4399787023744!2d7.5314866!3d45.0059065!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478815a4f1bd244d%3A0x22db17216066c657!2sVia%20Cesare%20Cervetti%2C%206%2C%2010043%20Orbassano%20TO!5e1!3m2!1sit!2sit!4v1635271588047!5m2!1sit!2sit"
+						class="border w-full h-full"
+						allowfullscreen=""
+						loading="lazy"
+				></iframe>
+				<iframe v-else src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2820.9300148607927!2d7.530606815922572!3d45.00604307909828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478815a4f1bd244d%3A0x22db17216066c657!2sVia%20Cesare%20Cervetti%2C%206%2C%2010043%20Orbassano%20TO!5e0!3m2!1sit!2sit!4v1635266936944!5m2!1sit!2sit"
 						class="border w-full h-full"
 						allowfullscreen=""
 						loading="lazy"
