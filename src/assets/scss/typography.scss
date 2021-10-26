@@ -3,6 +3,11 @@ h1{
 	@apply font-1 #{!important};
 }
 
+h2{
+	@apply text-3xl #{!important};
+	@apply font-1 #{!important};
+}
+
 p, dd {
 	@extend .font-2;
 }
