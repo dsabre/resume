@@ -4,21 +4,11 @@ module.exports = {
     theme:    {
         extend: {
             colors: {
-                facebook: {
-                    DEFAULT: '#4267b2'
-                },
-                linkedin: {
-                    DEFAULT: '#2867b2'
-                },
-                twitter: {
-                    DEFAULT: '#1da1f2'
-                },
-                instagram: {
-                    DEFAULT: '#e1306c'
-                },
-                github: {
-                    DEFAULT: '#171515'
-                }
+                facebook:  '#4267b2',
+                linkedin:  '#2867b2',
+                twitter:   '#1da1f2',
+                instagram: '#e1306c',
+                github:    '#171515'
             }
         }
     },
