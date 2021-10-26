@@ -68,7 +68,3 @@ export default {
 	components: {Typer}
 }
 </script>
-
-<style scoped>
-
-</style>

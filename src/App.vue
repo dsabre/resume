@@ -62,7 +62,7 @@ export default {
 			this.theme = theme || Cookies.get('theme') || this.theme;
 		},
 		localeHandler: function () {
-			const prevLocale  = Cookies.get('locale') || this.$i18n.fallbackLocale;
+			const prevLocale  = (Cookies.get('locale') || this.$i18n.fallbackLocale).trim();
 			this.$i18n.locale = prevLocale;
 			this.$root.$emit('sidebar-locale', prevLocale);
 		}
