@@ -13,8 +13,8 @@
 							</div>
 							<div class="p-3">
 								<span class="uppercase bg-gray-300 py-1 px-2 rounded-full text-xs" v-html="item.period"></span>
-								<h5 class="font-1 uppercase mt-1" v-html="item.name"></h5>
-								<p class="font-2" v-html="item.text"></p>
+								<h5 class="mt-1" v-html="item.name"></h5>
+								<p v-html="item.text"></p>
 							</div>
 						</div>
 					</li>
@@ -32,8 +32,8 @@
 							</div>
 							<div class="p-3">
 								<span class="uppercase bg-gray-300 py-1 px-2 rounded-full text-xs" v-html="item.period"></span>
-								<h5 class="font-1 uppercase mt-1" v-html="item.name"></h5>
-								<p class="font-2" v-html="item.text"></p>
+								<h5 class="mt-1" v-html="item.name"></h5>
+								<p v-html="item.text"></p>
 							</div>
 						</div>
 					</li>

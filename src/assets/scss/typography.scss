@@ -8,7 +8,11 @@ h2{
 	@apply font-1 #{!important};
 }
 
-p, dd {
+h5{
+	@apply font-1 #{!important};
+}
+
+p, span, a, dd {
 	@extend .font-2;
 }
 

@@ -7,9 +7,13 @@
 				<Navbar/>
 
 				<Home/>
+				<hr class="my-3 md:hidden">
 				<About/>
+				<hr class="my-3 md:hidden">
 				<Resume/>
+				<hr class="my-3 md:hidden">
 				<Skills/>
+				<hr class="my-3 md:hidden">
 				<Contact/>
 			</div>
 		</div>

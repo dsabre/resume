@@ -9,6 +9,8 @@
 .font-1{
 	font-family: 'Bebas Neue', cursive;
 	letter-spacing: 2px;
+
+	@apply uppercase;
 }
 
 .font-2{

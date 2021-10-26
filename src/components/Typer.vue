@@ -1,5 +1,5 @@
 <template>
-	<p id="typer" ref="typer" class="text-4xl h-12 font-2"></p>
+	<p id="typer" ref="typer" class="text-4xl h-12"></p>
 </template>
 
 <script>

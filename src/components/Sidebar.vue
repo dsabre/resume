@@ -4,7 +4,7 @@
 		 class="left-0 flex flex-col fixed md:statica w-screen md:w-1/4 p-4 min-h-screen md:border-r md:border-gray-300 bg-gray-50 dark:bg-gray-800 z-10"
 	>
 		<div class="grid grid-cols-2 gap-0">
-			<div class="font-1 uppercase text-2xl">{{ $t('sidebar.title') }}</div>
+			<div class="font-1 text-2xl">{{ $t('sidebar.title') }}</div>
 			<div class="text-right md:hidden"><i class="fas fa-times cursor-pointer" @click="toggle"></i></div>
 		</div>
 

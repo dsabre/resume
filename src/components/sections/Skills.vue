@@ -7,14 +7,13 @@
 				<a v-if="!!item[2]"
 				   :href="item[2]"
 				   target="_blank"
-				   class="font-2 hidden md:inline"
+				   class="hidden md:inline"
 				>
 					<span v-html="item[0]"></span>
 					<i class="ml-2 fas fa-external-link-alt"></i>
 				</a>
 
-				<span class="font-2"
-					  v-bind:class="{'inline md:hidden': !!item[2]}"
+				<span v-bind:class="{'inline md:hidden': !!item[2]}"
 					  v-html="item[0]"
 				></span>
 
@@ -23,7 +22,7 @@
 						<div ref="skill" :data-index="index" :style="'width:0%;transition-delay: ' + (delay + delay * index) + 'ms;'"
 							 class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-500 transition-all duration-1000 ease-in-out"
 						>
-							<span class="font-2">{{ item[1] }}%</span>
+							<span>{{ item[1] }}%</span>
 						</div>
 					</div>
 				</div>
