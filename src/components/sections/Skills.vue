@@ -36,7 +36,7 @@ export default {
 	name: "Skills",
 	data() {
 		return {
-			delay:  50,
+			delay:  0,
 			skills: [
 				['PHP', 95, 'https://www.php.net/'],
 				['HTML', 95],
