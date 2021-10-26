@@ -3,14 +3,10 @@ h1{
 	@apply font-1 #{!important};
 }
 
-p {
+p, dd {
 	@extend .font-2;
 }
 
 dt {
 	@extend .font-1;
-}
-
-dd {
-	@extend .font-2;
 }
