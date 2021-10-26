@@ -17,14 +17,14 @@
 </template>
 
 <script>
-import Cookies          from 'js-cookie'
-import Navbar           from "./components/Navbar";
-import About            from "./components/sections/About";
-import Contact          from "./components/sections/Contact";
-import Home             from "./components/sections/Home";
-import Resume           from "./components/sections/Resume";
-import Skills           from "./components/sections/Skills";
-import Sidebar          from "./components/Sidebar";
+import Cookies from 'js-cookie'
+import Navbar  from "./components/Navbar";
+import About   from "./components/sections/About";
+import Contact from "./components/sections/Contact";
+import Home    from "./components/sections/Home";
+import Resume  from "./components/sections/Resume";
+import Skills  from "./components/sections/Skills";
+import Sidebar from "./components/Sidebar";
 
 // https://tailwindcss.com/
 // https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free
@@ -36,7 +36,7 @@ import Sidebar          from "./components/Sidebar";
 // https://bslthemes.site/cvio/
 
 export default {
-	name: 'App',
+	name:       'App',
 	components: {
 		Contact,
 		Skills,
@@ -58,11 +58,11 @@ export default {
 		this.$root.$on('app-theme', this.themeHandler);
 	},
 	methods: {
-		themeHandler: function (theme) {
+		themeHandler:  function (theme) {
 			this.theme = theme || Cookies.get('theme') || this.theme;
 		},
 		localeHandler: function () {
-			const prevLocale = Cookies.get('locale') || this.$i18n.fallbackLocale;
+			const prevLocale  = Cookies.get('locale') || this.$i18n.fallbackLocale;
 			this.$i18n.locale = prevLocale;
 			this.$root.$emit('sidebar-locale', prevLocale);
 		}
