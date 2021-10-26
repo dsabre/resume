@@ -49,7 +49,6 @@ export default {
 	data() {
 		return {
 			theme: 'light'
-			// theme: 'light'
 		}
 	},
 	mounted() {
