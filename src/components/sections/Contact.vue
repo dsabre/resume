@@ -45,16 +45,14 @@
 		</div>
 
 		<div class="hidden md:block bg-green-100 p-5 border border-green-500 text-green-700 rounded fixed top-4 right-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
-			 v-bind:class="{'opacity-0': !showSuccess, 'opacity-100': showSuccess}"
-			 ref="messageSuccess"
+			 v-bind:class="{'opacity-0': !showMessageSuccess, 'opacity-100': showMessageSuccess}"
 		>
-			<span>Successfully sended message</span>
+			<span>{{$t('contact.form.messages.success')}}</span>
 		</div>
 		<div class="block md:hidden bg-green-100 p-5 border border-green-500 text-green-700 rounded fixed top-4 inset-x-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
-			 v-bind:class="{'opacity-0': !showSuccess, 'opacity-100': showSuccess}"
-			 ref="messageSuccessMobile"
+			 v-bind:class="{'opacity-0': !showMessageSuccess, 'opacity-100': showMessageSuccess}"
 		>
-			<span>Successfully sended message</span>
+			<span>{{$t('contact.form.messages.success')}}</span>
 		</div>
 	</section>
 </template>
@@ -64,10 +62,10 @@ export default {
 	name: "Contact",
 	data() {
 		return {
-			name:        '',
-			message:     '',
-			sending:     false,
-			showSuccess: false
+			name:               '',
+			message:            '',
+			sending:            false,
+			showMessageSuccess: false
 		};
 	},
 	computed: {
@@ -90,16 +88,16 @@ export default {
 			console.log(this.name.trim(), this.message.trim());
 
 			setTimeout(() => {
-				this.name        = '';
-				this.message     = '';
-				this.sending     = false;
+				this.name    = '';
+				this.message = '';
+				this.sending = false;
 
-				this.doShowSuccess();
+				this.doShowMessageSuccess();
 			}, 1000);
 		},
-		doShowSuccess: function () {
-			this.showSuccess = true;
-			setTimeout(() => this.showSuccess = false, 5000);
+		doShowMessageSuccess: function () {
+			this.showMessageSuccess = true;
+			setTimeout(() => this.showMessageSuccess = false, 5000);
 		}
 	}
 }

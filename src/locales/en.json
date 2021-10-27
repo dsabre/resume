@@ -81,14 +81,17 @@
     "contact": {
         "title": "Contact",
         "form":  {
-            "title":   "Get in touch",
-            "name":    {
+            "title":    "Get in touch",
+            "name":     {
                 "placeholder": "Name *"
             },
-            "message": {
+            "message":  {
                 "placeholder": "Message *"
             },
-            "submit":  "Send message"
+            "submit":   "Send message",
+            "messages": {
+                "success": "Contact request successfully sended"
+            }
         }
     }
 }
