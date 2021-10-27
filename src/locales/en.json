@@ -77,5 +77,18 @@
     },
     "skills":  {
         "title": "Skills"
+    },
+    "contact": {
+        "title": "Contact",
+        "form":  {
+            "title":   "Get in touch",
+            "name":    {
+                "placeholder": "Name *"
+            },
+            "message": {
+                "placeholder": "Message *"
+            },
+            "submit":  "Send message"
+        }
     }
 }

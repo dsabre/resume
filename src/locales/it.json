@@ -77,5 +77,18 @@
     },
     "skills":  {
         "title": "Competenze"
+    },
+    "contact": {
+        "title": "Contatti",
+        "form":  {
+            "title":   "Contattami",
+            "name":    {
+                "placeholder": "Nome *"
+            },
+            "message": {
+                "placeholder": "Messaggio *"
+            },
+            "submit":  "Invia messaggio"
+        }
     }
 }
