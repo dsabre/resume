@@ -1,6 +1,6 @@
 <template>
 	<section id="contact" class="page-section">
-		<h1 class="mb-3 dark:text-gray-100">{{$t('contact.title')}}</h1>
+		<h1 class="mb-3 dark:text-gray-100">{{ $t('contact.title') }}</h1>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-2 h-4/5">
 			<div class="hidden md:block">
@@ -11,7 +11,7 @@
 				></iframe>
 			</div>
 			<div>
-				<h2 class="dark:text-gray-100">{{$t('contact.form.title')}}</h2>
+				<h2 class="dark:text-gray-100">{{ $t('contact.form.title') }}</h2>
 				<form v-on:submit="sendMessage"
 					  v-bind:class="{'cursor-wait': sending}"
 				>
@@ -38,17 +38,24 @@
 							v-bind:class="{'hover:from-blue-600 hover:to-green-600 dark:hover:from-red-500 dark:hover:to-pink-600': canSubmit, 'cursor-wait': sending}"
 					>
 						<i v-show="sending" class="fas fa-circle-notch fa-spin"></i>
-						{{$t('contact.form.submit')}}
+						{{ $t('contact.form.submit') }}
 					</button>
 				</form>
 			</div>
 		</div>
 
-		<!--		<div ref="messageSuccess"-->
-		<!--			 class="bg-green-100 p-3 md:p-5 border border-green-500 text-green-700 rounded fixed inset-x-4 top-4 md:right-4 text-center shadow-lg"-->
-		<!--		>-->
-		<!--			<span>Successfully sended message</span>-->
-		<!--		</div>-->
+		<div class="hidden md:block bg-green-100 p-5 border border-green-500 text-green-700 rounded fixed top-4 right-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
+			 v-bind:class="{'opacity-0': !showSuccess, 'opacity-100': showSuccess}"
+			 ref="messageSuccess"
+		>
+			<span>Successfully sended message</span>
+		</div>
+		<div class="block md:hidden bg-green-100 p-5 border border-green-500 text-green-700 rounded fixed top-4 inset-x-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
+			 v-bind:class="{'opacity-0': !showSuccess, 'opacity-100': showSuccess}"
+			 ref="messageSuccessMobile"
+		>
+			<span>Successfully sended message</span>
+		</div>
 	</section>
 </template>
 
@@ -57,9 +64,10 @@ export default {
 	name: "Contact",
 	data() {
 		return {
-			name:    '',
-			message: '',
-			sending: false
+			name:        '',
+			message:     '',
+			sending:     false,
+			showSuccess: false
 		};
 	},
 	computed: {
@@ -82,10 +90,16 @@ export default {
 			console.log(this.name.trim(), this.message.trim());
 
 			setTimeout(() => {
-				this.name    = '';
-				this.message = '';
-				this.sending = false;
-			}, 5000);
+				this.name        = '';
+				this.message     = '';
+				this.sending     = false;
+
+				this.doShowSuccess();
+			}, 1000);
+		},
+		doShowSuccess: function () {
+			this.showSuccess = true;
+			setTimeout(() => this.showSuccess = false, 5000);
 		}
 	}
 }
