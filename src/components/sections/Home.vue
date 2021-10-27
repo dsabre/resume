@@ -15,7 +15,7 @@
 				<p class="my-3 dark:text-gray-100">{{ $t('home.teaser') }}</p>
 
 				<div class="text-center md:text-left">
-					<a href="#"
+					<a href="https://www.facebook.com/daniele.sabre"
 					   target="_blank"
 					   title="Facebook"
 					   class="text-facebook md:text-gray-600 md:dark:text-gray-400 md:hover:text-facebook md:dark:hover:text-facebook"
@@ -23,7 +23,7 @@
 						<i class="fab fa-facebook-f fa-2x"></i>
 					</a>
 
-					<a href="#"
+					<a href="https://www.linkedin.com/in/danielesabre/"
 					   target="_blank"
 					   class="ml-3 text-linkedin md:text-gray-600 md:dark:text-gray-400 md:hover:text-linkedin md:dark:hover:text-linkedin"
 					   title="LinkedIn"
@@ -31,7 +31,7 @@
 						<i class="fab fa-linkedin-in fa-2x"></i>
 					</a>
 
-					<a href="#"
+					<a href="https://twitter.com/raniel86"
 					   target="_blank"
 					   class="ml-3 text-twitter md:text-gray-600 md:dark:text-gray-400 md:hover:text-twitter md:dark:hover:text-twitter"
 					   title="Twitter"
@@ -39,7 +39,7 @@
 						<i class="fab fa-twitter fa-2x"></i>
 					</a>
 
-					<a href="#"
+					<a href="https://www.instagram.com/raniel_86/"
 					   target="_blank"
 					   class="ml-3 text-instagram md:text-gray-600 md:dark:text-gray-400 md:hover:text-instagram md:dark:hover:text-instagram"
 					   title="Instagram"
@@ -47,12 +47,20 @@
 						<i class="fab fa-instagram fa-2x"></i>
 					</a>
 
-					<a href="#"
+					<a href="https://github.com/raniel86"
 					   target="_blank"
 					   class="ml-3 text-github md:text-gray-600 md:dark:text-gray-400 md:hover:text-github md:dark:hover:text-github"
 					   title="GitHub"
 					>
 						<i class="fab fa-github fa-2x"></i>
+					</a>
+
+					<a href="https://www.npmjs.com/~raniel"
+					   target="_blank"
+					   class="ml-3 text-npm md:text-gray-600 md:dark:text-gray-400 md:hover:text-npm md:dark:hover:text-npm"
+					   title="GitHub"
+					>
+						<i class="fab fa-npm fa-2x"></i>
 					</a>
 				</div>
 			</div>
