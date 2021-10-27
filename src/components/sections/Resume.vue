@@ -23,7 +23,7 @@
 				</ul>
 			</div>
 			<div class="md:pr-12">
-				<hr class="my-3 md:hidden">
+<!--				<hr class="my-3 md:hidden dark:border-gray-600">-->
 
 				<h2 class="dark:text-gray-100">{{ $t('resume.education.title') }}</h2>
 				<ul>
