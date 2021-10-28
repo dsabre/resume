@@ -14,7 +14,7 @@
 
 				<p class="my-3 dark:text-gray-100" v-html="$t('home.teaser')"></p>
 
-				<div class="text-center md:text-left">
+				<div class="text-center dark:bg-gray-300 py-2 md:text-left md:dark:bg-transparent">
 					<a href="https://www.facebook.com/daniele.sabre"
 					   target="_blank"
 					   title="Facebook"

@@ -4,7 +4,7 @@
 
 		<p class="mb-3 dark:text-gray-100" v-html="$t('about.text').join('<br><br>')"></p>
 
-		<dl class="grid grid-cols-2 gap-3 w-full md:w-1/2 bg-gray-100 dark:bg-gray-600 py-3 border dark:border-gray-500">
+		<dl class="grid grid-cols-2 gap-3 w-full md:w-1/2 bg-gray-100 dark:bg-gray-600 py-3 border dark:border-gray-500 shadow">
 			<dt class="text-right dark:text-gray-100">{{ $t('about.details.name.label') }}</dt>
 			<dd class="dark:text-gray-100">Daniele</dd>
 

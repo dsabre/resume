@@ -1,7 +1,7 @@
 <template>
 	<div id="sidebar"
 		 v-bind:class="{'closed': closed}"
-		 class="left-0 flex flex-col fixed md:statica w-screen md:w-1/4 p-4 min-h-screen md:border-r md:border-gray-300 md:dark:border-gray-600 bg-gray-50 dark:bg-gray-800 z-10"
+		 class="left-0 flex flex-col fixed md:statica w-screen md:w-1/4 p-4 min-h-screen md:border-r md:border-gray-300 md:dark:border-gray-600 bg-gray-50 dark:bg-gray-800 z-20"
 	>
 		<div class="grid grid-cols-2 gap-0">
 			<div class="font-1 text-2xl dark:text-gray-100">{{ $t('sidebar.title') }}</div>

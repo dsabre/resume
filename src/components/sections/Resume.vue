@@ -6,7 +6,7 @@
 			<div class="md:pr-12">
 				<h2 class="dark:text-gray-100">{{ $t('resume.experiences.title') }}</h2>
 				<ul>
-					<li v-for="(item, index) in $t('resume.experiences.items')" :key="index" class="bg-gray-50 dark:bg-gray-600 dark:text-gray-100 border dark:border-gray-500 mb-3 shadow">
+					<li v-for="(item, index) in $t('resume.experiences.items')" :key="index" class="bg-gray-100 dark:bg-gray-600 dark:text-gray-100 border dark:border-gray-500 mb-3 shadow">
 						<div class="flex justify-start">
 							<div class="p-3">
 								<i class="fa fa-briefcase"></i>
@@ -27,7 +27,7 @@
 
 				<h2 class="dark:text-gray-100">{{ $t('resume.education.title') }}</h2>
 				<ul>
-					<li v-for="(item, index) in $t('resume.education.items')" :key="index" class="bg-gray-50 dark:bg-gray-600 dark:text-gray-100 border dark:border-gray-500 mb-3 shadow">
+					<li v-for="(item, index) in $t('resume.education.items')" :key="index" class="bg-gray-100 dark:bg-gray-600 dark:text-gray-100 border dark:border-gray-500 mb-3 shadow">
 						<div class="flex justify-start">
 							<div class="p-3">
 								<i class="fas fa-book"></i>
