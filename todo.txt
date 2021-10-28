@@ -1,0 +1,17 @@
+sidebar:
+    switch lingua con form toggle come per il tema
+
+home:
+    immagine
+    testo ita
+
+about:
+    testo:
+        ita
+        eng
+
+resume:
+    animazioni
+
+contact:
+    grecaptcha
