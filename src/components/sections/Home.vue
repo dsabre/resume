@@ -4,7 +4,7 @@
 			<div>
 				<img src="https://picsum.photos/570/740"
 					 alt=""
-					 class="w-full sm:w-3/4 mb-3 mx-auto md:mr-3 md:mb-0"
+					 class="w-full sm:w-3/4 mb-3 mx-auto md:mr-3 md:mb-0 shadow-lg border-2 border-green-500 dark:border-pink-500 md:transform md:rotate-2"
 				>
 			</div>
 			<div class="md:pl-3">
