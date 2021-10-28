@@ -44,18 +44,20 @@ export default {
 	name: "About",
 	data(){
 		return {
-			delay: 150,
-			interests: [
+			delay: 150
+		};
+	},
+	computed: {
+		interests: function () {
+			return [
 				{label: this.$t('about.interests.items.gaming'), ringColor: 'pink', icon: 'fas fa-headset'},
 				{label: this.$t('about.interests.items.coding'), ringColor: 'green', icon: 'fas fa-code'},
 				{label: this.$t('about.interests.items.photography'), ringColor: 'blue', icon: 'fas fa-camera'},
 				{label: this.$t('about.interests.items.anime'), ringColor: 'yellow', icon: 'fas fa-comments'},
 				{label: this.$t('about.interests.items.tvSeries'), ringColor: 'red', icon: 'fas fa-tv'},
 				{label: this.$t('about.interests.items.films'), ringColor: 'purple', icon: 'fas fa-film'},
-			]
-		};
-	},
-	computed: {
+			];
+		},
 		age: function () {
 			const ageDifMs = Date.now() - 529369200000;
 			const ageDate = new Date(ageDifMs);

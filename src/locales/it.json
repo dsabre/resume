@@ -58,19 +58,44 @@
             "title": "Esperienze",
             "items": [
                 {
-                    "period": "2018 - presente",
-                    "name":   "Web Developer <span class=\"place open-sans-font\">Envato</span>",
-                    "text":   "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit"
+                    "period": "apr 2009 - presente",
+                    "name":   "Web Developer",
+                    "text":   "Sviluppo di siti web mediante il framework Symfony o CMS Drupal, a seconda delle necessità mi occupo degli sviluppi lato front-end (montaggio e dinamizzazione del tema) e/o back-end (gestione dei web service, interrogazioni sui database ecc...)."
+                },
+                {
+                    "period": "set 2008 - nov 2008",
+                    "name":   "Operatore callcenter inbound",
+                    "text":   "Operatore callcenter per servizio inbound su utilizzo del sito di Intesa San Paolo sezione aziende."
+                },
+                {
+                    "period": "mag 2007 - set 2007",
+                    "name":   "Impiegato tecnico",
+                    "text":   "Rilievi tecnici su prototipi di veicoli in prova, compilazione di file relativi ai rilievi fatti, creazione di relazioni per i clienti, gestione dei percorsi di prova del veicolo seguito."
                 }
             ]
         },
         "education":   {
-            "title": "Educazione",
+            "title": "Formazione",
             "items": [
                 {
-                    "period": "2018 - presente",
-                    "name":   "Web Developer <span class=\"place open-sans-font\">Envato</span>",
-                    "text":   "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit"
+                    "period": "ott 2007 - lug 2008",
+                    "name":   "CSEA G. Ceppi di Orbassano (TO)",
+                    "text":   "Corso per web developer e web designer, ASP.net, SQLserver, PHP, MySQL, Javascript, Flash e actionscript, Photoshop, C#, inglese."
+                },
+                {
+                    "period": "2006 - 2007",
+                    "name":   "IIS E. Amaldi di Orbassano (TO), Immaginazione e lavoro di Torino",
+                    "text":   "Specializzazione post-diploma in routing, switching e tecnologie wireless, reti informatiche."
+                },
+                {
+                    "period": "2006 - 2006",
+                    "name":   "IIS E. Amaldi di Orbassano (TO)",
+                    "text":   "Patente europea del computer (ECDL)."
+                },
+                {
+                    "period": "2000 - 2005",
+                    "name":   "IIS E. Amaldi di Orbassano (TO)",
+                    "text":   "Diploma di perito in elettronica e telecomunicazioni."
                 }
             ]
         }

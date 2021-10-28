@@ -12,7 +12,7 @@
 
 				<Typer class="my-3 dark:text-gray-100"/>
 
-				<p class="my-3 dark:text-gray-100">{{ $t('home.teaser') }}</p>
+				<p class="my-3 dark:text-gray-100" v-html="$t('home.teaser')"></p>
 
 				<div class="text-center md:text-left">
 					<a href="https://www.facebook.com/daniele.sabre"

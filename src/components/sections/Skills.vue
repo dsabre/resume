@@ -40,21 +40,36 @@ export default {
 			delay:  0,
 			skills: [
 				['PHP', 95, 'https://www.php.net/'],
-				['HTML', 95],
+				['HTML', 100],
+				['Javascript', 100],
 				['CSS, SCSS, SASS', 70],
 				['MySQL', 70, 'https://www.mysql.com/it/'],
 				['jQuery', 100, 'https://jquery.com/'],
 				['Symfony', 100, 'https://symfony.com/'],
-				['Angular', 70, 'https://angular.io/'],
+				['Angular', 80, 'https://angular.io/'],
 				['React', 30, 'https://it.reactjs.org/'],
 				['Vue', 80, 'https://vuejs.org/']
 			]
 		}
 	},
 	mounted() {
+		this.sortSkills();
 		this.manageAnimations();
 	},
 	methods: {
+		sortSkills: function () {
+			this.skills.sort((a, b) => {
+				if (a[1] < b[1]) {
+					return 1;
+				}
+
+				if (a[1] > b[1]) {
+					return -1;
+				}
+
+				return 0;
+			})
+		},
 		manageAnimations: function () {
 			const observer = new IntersectionObserver(entries => {
 				if (entries[0].isIntersecting === true) {
