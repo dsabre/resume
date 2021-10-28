@@ -58,9 +58,19 @@
             "title": "Experience",
             "items": [
                 {
-                    "period": "2018 - Present",
-                    "name":   "Web Developer <span class=\"place open-sans-font\">Envato</span>",
-                    "text":   "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit"
+                    "period": "apr 2009 - present",
+                    "name":   "Web Developer",
+                    "text":   "Development of websites using the Symfony framework or CMS Drupal, depending on the needs I take care of the front-end developments (assembly and dynamization of the theme) and / or back-end (web service management, database queries etc ... )."
+                },
+                {
+                    "period": "sep 2008 - nov 2008",
+                    "name":   "Inbound call center operator",
+                    "text":   "Call center operator for inbound service on use of the Intesa San Paolo company section site."
+                },
+                {
+                    "period": "may 2007 - sep 2007",
+                    "name":   "Technical employee",
+                    "text":   "Technical analysis of prototype vehicles, compilation of files relating to the analyzes carried out, creation of reports for customers, management of test routes for vehicles."
                 }
             ]
         },
@@ -68,9 +78,24 @@
             "title": "Education",
             "items": [
                 {
-                    "period": "2018 - Present",
-                    "name":   "Web Developer <span class=\"place open-sans-font\">Envato</span>",
-                    "text":   "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit"
+                    "period": "oct 2007 - jul 2008",
+                    "name":   "CSEA G. Ceppi di Orbassano (TO)",
+                    "text":   "Course for web developer and web designer, ASP.net, SQL server, PHP, MySQL, Javascript, Flash and actionscript, Photoshop, C#, English language."
+                },
+                {
+                    "period": "2006 - 2007",
+                    "name":   "IIS E. Amaldi di Orbassano (TO), Immaginazione e lavoro di Torino",
+                    "text":   "Post-graduate specialization in routing, switching, wireless technologies and computer networks."
+                },
+                {
+                    "period": "2006 - 2006",
+                    "name":   "IIS E. Amaldi di Orbassano (TO)",
+                    "text":   "European computer driving licence (ECDL)."
+                },
+                {
+                    "period": "2000 - 2005",
+                    "name":   "IIS E. Amaldi di Orbassano (TO)",
+                    "text":   "Diploma of expert in electronics and telecommunications."
                 }
             ]
         }
