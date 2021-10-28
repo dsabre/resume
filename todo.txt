@@ -1,5 +1,5 @@
 sidebar:
-    switch lingua con form toggle come per il tema
+    (in forse) switch lingua con form toggle come per il tema
 
 home:
     immagine
