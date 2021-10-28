@@ -5,7 +5,7 @@
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-2 h-4/5">
 			<div class="hidden md:block">
 				<iframe :src="mapUrl"
-						class="border w-full h-full"
+						class="border-0 w-full h-full ring-2 ring-green-500 dark:ring-pink-500 rounded"
 						allowfullscreen=""
 						loading="lazy"
 				></iframe>
@@ -18,14 +18,14 @@
 					<input v-model="name"
 						   type="text"
 						   :placeholder="$t('contact.form.name.placeholder')"
-						   class="py-3 px-4 bg-gray-50 dark:bg-gray-300 border dark:border-gray-600 rounded-lg placeholder-gray-500 text-gray-900 appearance-none inline-block w-full shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-pink-500"
+						   class="py-3 px-4 bg-gray-50 dark:bg-gray-300 border dark:border-0 rounded-lg placeholder-gray-500 text-gray-900 appearance-none inline-block w-full shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-pink-500"
 						   required
 						   :disabled="sending"
 						   v-bind:class="{'cursor-wait': sending}"
 					>
 					<textarea v-model="message"
 							  rows="10"
-							  class="py-3 px-4 bg-gray-50 dark:bg-gray-300 border dark:border-gray-600 rounded-lg placeholder-gray-500 text-gray-900 appearance-none inline-block w-full shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-pink-500 mt-3"
+							  class="py-3 px-4 bg-gray-50 dark:bg-gray-300 border dark:border-0 rounded-lg placeholder-gray-500 text-gray-900 appearance-none inline-block w-full shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-pink-500 mt-3"
 							  :placeholder="$t('contact.form.message.placeholder')"
 							  required
 							  :disabled="sending"
