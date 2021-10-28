@@ -115,7 +115,8 @@
             },
             "submit":   "Send message",
             "messages": {
-                "success": "Contact request successfully sended"
+                "success": "Contact request successfully sended",
+                "error":   "Error occurred, try again later"
             }
         }
     }

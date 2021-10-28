@@ -115,7 +115,8 @@
             },
             "submit":   "Invia messaggio",
             "messages": {
-                "success": "Richiesta di contatto inviata con successo"
+                "success": "Richiesta di contatto inviata con successo",
+                "error":   "Si è verificato un errore, riprovare più tardi"
             }
         }
     }

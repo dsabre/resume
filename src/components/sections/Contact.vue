@@ -47,17 +47,30 @@
 		<div class="hidden md:block bg-green-100 p-5 border border-green-500 text-green-700 rounded fixed top-4 right-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
 			 v-bind:class="{'opacity-0': !showMessageSuccess, 'opacity-100': showMessageSuccess}"
 		>
-			<span>{{$t('contact.form.messages.success')}}</span>
+			<span>{{ $t('contact.form.messages.success') }}</span>
 		</div>
 		<div class="block md:hidden bg-green-100 p-5 border border-green-500 text-green-700 rounded fixed top-4 inset-x-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
 			 v-bind:class="{'opacity-0': !showMessageSuccess, 'opacity-100': showMessageSuccess}"
 		>
-			<span>{{$t('contact.form.messages.success')}}</span>
+			<span>{{ $t('contact.form.messages.success') }}</span>
+		</div>
+
+		<div class="hidden md:block bg-red-100 p-5 border border-red-500 text-red-700 rounded fixed top-4 right-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
+			 v-bind:class="{'opacity-0': !showMessageError, 'opacity-100': showMessageError}"
+		>
+			<span>{{ $t('contact.form.messages.error') }}</span>
+		</div>
+		<div class="block md:hidden bg-red-100 p-5 border border-red-500 text-red-700 rounded fixed top-4 inset-x-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
+			 v-bind:class="{'opacity-0': !showMessageError, 'opacity-100': showMessageError}"
+		>
+			<span>{{ $t('contact.form.messages.error') }}</span>
 		</div>
 	</section>
 </template>
 
 <script>
+import * as axios from 'axios';
+
 export default {
 	name: "Contact",
 	data() {
@@ -65,7 +78,9 @@ export default {
 			name:               '',
 			message:            '',
 			sending:            false,
-			showMessageSuccess: false
+			showMessageSuccess: false,
+			showMessageError:   false,
+			hideMessageTimeout: 5000
 		};
 	},
 	computed: {
@@ -85,19 +100,28 @@ export default {
 
 			this.sending = true;
 
-			console.log(this.name.trim(), this.message.trim());
-
-			setTimeout(() => {
+			axios.post(process.env.VUE_APP_CONTACT_SERVER + '/resume-send-message', {
+				name:    this.name.trim(),
+				message: this.message.trim()
+			}).then(() => {
 				this.name    = '';
 				this.message = '';
 				this.sending = false;
 
 				this.doShowMessageSuccess();
-			}, 1000);
+			}).catch(() => {
+				this.sending = false;
+
+				this.doShowMessageError();
+			});
 		},
 		doShowMessageSuccess: function () {
 			this.showMessageSuccess = true;
-			setTimeout(() => this.showMessageSuccess = false, 5000);
+			setTimeout(() => this.showMessageSuccess = false, this.hideMessageTimeout);
+		},
+		doShowMessageError:   function () {
+			this.showMessageError = true;
+			setTimeout(() => this.showMessageError = false, this.hideMessageTimeout);
 		}
 	}
 }
