@@ -102,7 +102,7 @@ export default {
 
 			window.grecaptcha.ready(() => {
 				window.grecaptcha.execute(process.env.VUE_APP_RECAPTCHA_SITE_KEY, {action: 'sendMessage'}).then(token => {
-					axios.post(process.env.VUE_APP_CONTACT_SERVER + '/resume-send-message', {
+					axios.post(process.env.VUE_APP_CONTACT_SERVER + '/send-message', {
 						name:            this.name.trim(),
 						message:         this.message.trim(),
 						grecaptchaToken: token,
