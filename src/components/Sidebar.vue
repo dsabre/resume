@@ -68,17 +68,29 @@
 				<i class="fas fa-moon dark:text-gray-100"></i>
 			</div>
 			<div id="language-selector" class="text-right text-gray-500 dark:text-gray-300">
-				<a href="#" class="hover:text-black dark:hover:text-gray-100" data-locale="it" @click="setSiteLanguage">ITA</a>
+				<a href="#"
+				   class="hover:text-black dark:hover:text-gray-100"
+				   data-locale="it"
+				   @click="setSiteLocale"
+				   v-bind:class="{'active': locale === 'it'}"
+				>
+					ITA
+				</a>
 				|
-				<a href="#" class="hover:text-black dark:hover:text-gray-100" data-locale="en" @click="setSiteLanguage">ENG</a>
+				<a href="#"
+				   class="hover:text-black dark:hover:text-gray-100"
+				   data-locale="en"
+				   @click="setSiteLocale"
+				   v-bind:class="{'active': locale === 'en'}"
+				>
+					ENG
+				</a>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import Cookies from 'js-cookie'
-
 export default {
 	name: "Sidebar",
 	data: function () {
@@ -90,9 +102,13 @@ export default {
 			dark: false
 		};
 	},
+	computed:   {
+		locale: function () {
+			return this.$store.state.locale;
+		}
+	},
 	mounted() {
 		this.$root.$on('sidebar-toggle', this.toggle);
-		this.$root.$on('sidebar-locale', this.setLocale);
 
 		this.dark = this.$store.state.theme === 'dark';
 
@@ -172,7 +188,7 @@ export default {
 		setLinkClickedFalse: function () {
 			this.linkClicked = false;
 		},
-		setSiteLanguage: function (event) {
+		setSiteLocale: function (event) {
 			event.preventDefault();
 
 			const target = event.target;
@@ -181,30 +197,14 @@ export default {
 				return;
 			}
 
+			// get locale selected
 			const locale = target.dataset.locale.trim();
 
+			// set locale
 			this.$i18n.locale = locale;
 
-			this.setLinkLocaleActive(target);
-
-			Cookies.set('locale', locale);
-		},
-		setLinkLocaleActive: function (newActiveLink) {
-			const currentActiveLink = document.querySelector('[data-locale].active');
-			if (currentActiveLink) {
-				currentActiveLink.removeAttribute('aria-current');
-				currentActiveLink.classList.remove("active");
-			}
-
-			newActiveLink.setAttribute('aria-current', 'page');
-			newActiveLink.classList.add('active');
-		},
-		setLocale: function (locale) {
-			const newActiveLink = document.querySelector('[data-locale="' + locale + '"]');
-
-			if (newActiveLink) {
-				this.setLinkLocaleActive(newActiveLink);
-			}
+			// save locale to vuex
+			this.$store.commit('changeLocale', locale);
 		},
 		toggleTheme: function () {
 			// save theme to vuex

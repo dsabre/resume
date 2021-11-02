@@ -7,7 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state:     {
         theme:  Cookies.get('theme') || 'light',
-        locale: 'en'
+        locale: Cookies.get('locale') || 'en'
     },
     mutations: {
         changeTheme(state, theme) {
@@ -15,6 +15,12 @@ export default new Vuex.Store({
 
             // save theme in cookie
             Cookies.set('theme', theme);
+        },
+        changeLocale(state, locale){
+            this.state.locale = locale;
+
+            // save locale in cookie
+            Cookies.set('locale', locale);
         }
     },
     actions:   {},
