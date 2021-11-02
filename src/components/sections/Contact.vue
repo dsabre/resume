@@ -107,7 +107,8 @@ export default {
 						message:         this.message.trim(),
 						grecaptchaToken: token,
 						locale:          this.$store.state.locale,
-						theme:           this.$store.state.theme
+						theme:           this.$store.state.theme,
+						siteKey:         process.env.VUE_APP_TELEGRAMBOT_SITE_KEY
 					}).then(() => {
 						this.name    = '';
 						this.message = '';
