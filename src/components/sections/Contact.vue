@@ -100,19 +100,24 @@ export default {
 
 			this.sending = true;
 
-			axios.post(process.env.VUE_APP_CONTACT_SERVER + '/resume-send-message', {
-				name:    this.name.trim(),
-				message: this.message.trim()
-			}).then(() => {
-				this.name    = '';
-				this.message = '';
-				this.sending = false;
+			window.grecaptcha.ready(() => {
+				window.grecaptcha.execute(process.env.VUE_APP_RECAPTCHA_SITE_KEY, {action: 'sendMessage'}).then(token => {
+					axios.post(process.env.VUE_APP_CONTACT_SERVER + '/resume-send-message', {
+						name:            this.name.trim(),
+						message:         this.message.trim(),
+						grecaptchaToken: token
+					}).then(() => {
+						this.name    = '';
+						this.message = '';
+						this.sending = false;
 
-				this.doShowMessageSuccess();
-			}).catch(() => {
-				this.sending = false;
+						this.doShowMessageSuccess();
+					}).catch(() => {
+						this.sending = false;
 
-				this.doShowMessageError();
+						this.doShowMessageError();
+					});
+				});
 			});
 		},
 		doShowMessageSuccess: function () {

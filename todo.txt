@@ -12,6 +12,3 @@ about:
 
 resume:
     animazioni
-
-contact:
-    grecaptcha
