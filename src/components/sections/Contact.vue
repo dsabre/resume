@@ -44,23 +44,23 @@
 			</div>
 		</div>
 
-		<div class="hidden md:block bg-green-100 p-5 border border-green-500 text-green-700 rounded fixed top-4 right-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
+		<div class="z-30 hidden md:block bg-green-100 p-5 border border-green-500 text-green-700 rounded-0 fixed top-4 right-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
 			 v-bind:class="{'opacity-0': !showMessageSuccess, 'opacity-100': showMessageSuccess}"
 		>
 			<span>{{ $t('contact.form.messages.success') }}</span>
 		</div>
-		<div class="block md:hidden bg-green-100 p-5 border border-green-500 text-green-700 rounded fixed top-4 inset-x-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
+		<div class="z-30 block md:hidden bg-green-100 p-5 border border-green-500 text-green-700 rounded-0 fixed top-4 inset-x-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
 			 v-bind:class="{'opacity-0': !showMessageSuccess, 'opacity-100': showMessageSuccess}"
 		>
 			<span>{{ $t('contact.form.messages.success') }}</span>
 		</div>
 
-		<div class="hidden md:block bg-red-100 p-5 border border-red-500 text-red-700 rounded fixed top-4 right-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
+		<div class="z-30 hidden md:block bg-red-100 p-5 border border-red-500 text-red-700 rounded-0 fixed top-4 right-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
 			 v-bind:class="{'opacity-0': !showMessageError, 'opacity-100': showMessageError}"
 		>
 			<span>{{ $t('contact.form.messages.error') }}</span>
 		</div>
-		<div class="block md:hidden bg-red-100 p-5 border border-red-500 text-red-700 rounded fixed top-4 inset-x-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
+		<div class="z-30 block md:hidden bg-red-100 p-5 border border-red-500 text-red-700 rounded-0 fixed top-4 inset-x-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
 			 v-bind:class="{'opacity-0': !showMessageError, 'opacity-100': showMessageError}"
 		>
 			<span>{{ $t('contact.form.messages.error') }}</span>
@@ -105,7 +105,9 @@ export default {
 					axios.post(process.env.VUE_APP_CONTACT_SERVER + '/resume-send-message', {
 						name:            this.name.trim(),
 						message:         this.message.trim(),
-						grecaptchaToken: token
+						grecaptchaToken: token,
+						locale:          this.$store.state.locale,
+						theme:           this.$store.state.theme
 					}).then(() => {
 						this.name    = '';
 						this.message = '';
