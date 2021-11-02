@@ -30,7 +30,7 @@ export default {
 					pause: 1000
 				},
 				{
-					html: '<span class="text-yellow-500">Frontend</span> Developer',
+					html: '<span class="text-yellow-500">Frontender</span>',
 					back: ['all', 80],
 					function: 'line',
 					pause: 1000

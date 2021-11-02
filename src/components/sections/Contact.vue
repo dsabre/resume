@@ -33,7 +33,7 @@
 					></textarea>
 
 					<button type="submit"
-							class="font-2 font-bold bg-gradient-to-r from-blue-500 to-green-500 dark:from-red-400 dark:to-pink-500 disabled:opacity-50 text-white p-3 w-full mt-3 shadow"
+							class="font-2 w-full mt-3"
 							:disabled="!canSubmit"
 							v-bind:class="{'hover:from-blue-600 hover:to-green-600 dark:hover:from-red-500 dark:hover:to-pink-600': canSubmit, 'cursor-wait': sending}"
 					>
