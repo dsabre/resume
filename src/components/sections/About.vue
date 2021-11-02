@@ -28,12 +28,13 @@
 		<div class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
 			<div v-for="(item, index) in interests"
 				 :key="index"
-				 :class="'ring-' + item.ringColor + '-200 dark:ring-' + item.ringColor + '-500 p-3 text-center bg-gray-50 dark:bg-gray-600 dark:text-gray-100 ring shadow-lg rounded sm:rounded-full transition-opacity duration-1000 ease-in-out'"
-				 :style="'opacity:0;transition-delay: ' + (delay + delay * index) + 'ms;'"
-				 ref="interest"
+				 :class="'ring-' + item.ringColor + '-200 dark:ring-' + item.ringColor + '-500 p-3 text-center bg-gray-50 dark:bg-gray-600 dark:text-gray-100 ring shadow-lg rounded sm:rounded-full'"
+				 data-aos="flip-left"
+				 data-aos-duration="1000"
+				 :data-aos-delay="delay + delay * index"
 			>
 				<i :class="item.icon + ' fa-2x block'"></i>
-				<span>{{item.label}}</span>
+				<span>{{ item.label }}</span>
 			</div>
 		</div>
 	</section>
@@ -42,9 +43,9 @@
 <script>
 export default {
 	name: "About",
-	data(){
+	data() {
 		return {
-			delay: 150
+			delay: 100
 		};
 	},
 	computed: {
@@ -55,35 +56,13 @@ export default {
 				{label: this.$t('about.interests.items.photography'), ringColor: 'blue', icon: 'fas fa-camera'},
 				{label: this.$t('about.interests.items.anime'), ringColor: 'yellow', icon: 'fas fa-comments'},
 				{label: this.$t('about.interests.items.tvSeries'), ringColor: 'red', icon: 'fas fa-tv'},
-				{label: this.$t('about.interests.items.films'), ringColor: 'purple', icon: 'fas fa-film'},
+				{label: this.$t('about.interests.items.films'), ringColor: 'purple', icon: 'fas fa-film'}
 			];
 		},
-		age: function () {
+		age:       function () {
 			const ageDifMs = Date.now() - 529369200000;
-			const ageDate = new Date(ageDifMs);
+			const ageDate  = new Date(ageDifMs);
 			return Math.abs(ageDate.getUTCFullYear() - 1970);
-		}
-	},
-	mounted() {
-		this.manageAnimations();
-	},
-	methods: {
-		manageAnimations: function () {
-			const observer = new IntersectionObserver(entries => {
-				if (entries[0].isIntersecting === true) {
-					for (let i = 0; i < entries.length; i++) {
-						entries[i].target.style.opacity = 1;
-					}
-				} else {
-					for (let i = 0; i < entries.length; i++) {
-						entries[i].target.style.opacity = 0;
-					}
-				}
-			}, {threshold: [0]});
-
-			for (let i = 0; i < this.$refs.interest.length; i++) {
-				observer.observe(this.$refs.interest[i]);
-			}
 		}
 	}
 }

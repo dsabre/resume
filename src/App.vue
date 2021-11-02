@@ -21,7 +21,8 @@
 </template>
 
 <script>
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
+import AOS     from 'aos';
 import Navbar  from "./components/Navbar";
 import About   from "./components/sections/About";
 import Contact from "./components/sections/Contact";
@@ -38,6 +39,9 @@ import Sidebar from "./components/Sidebar";
 // https://html5up.net/hyperspace
 // https://bslthemes.site/myour/
 // https://bslthemes.site/cvio/
+// https://michalsnik.github.io/aos/
+
+AOS.init();
 
 export default {
 	name:       'App',

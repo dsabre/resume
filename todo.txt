@@ -9,6 +9,3 @@ about:
     testo:
         ita
         eng
-
-resume:
-    animazioni
