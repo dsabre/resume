@@ -1,6 +1,3 @@
-sidebar:
-    (in forse) switch lingua con form toggle come per il tema
-
 home:
     immagine
     testo ita

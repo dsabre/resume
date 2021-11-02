@@ -3,6 +3,12 @@
 		<button class="rounded-full h-10 w-10 flex items-center justify-center dark:text-gray-100" @click="toggleSidebar">
 			<i class="fas fa-bars"></i>
 		</button>
+
+		<div class="text-right w-full inline-block table">
+			<span class="font-1 dark:text-gray-100 table-cell align-middle">
+				Daniele Sabre
+			</span>
+		</div>
 	</nav>
 </template>
 
