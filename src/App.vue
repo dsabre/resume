@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import Cookies from 'js-cookie';
 import AOS     from 'aos';
 import Navbar  from "./components/Navbar";
 import About   from "./components/sections/About";
@@ -60,9 +59,7 @@ export default {
 		}
 	},
 	mounted() {
-		const prevLocale  = (Cookies.get('locale') || this.$i18n.fallbackLocale).trim();
-		this.$i18n.locale = prevLocale;
-		this.$root.$emit('sidebar-locale', prevLocale);
+		this.$i18n.locale = this.$store.state.locale;
 	}
 }
 </script>
