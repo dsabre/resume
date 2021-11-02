@@ -5,7 +5,8 @@
 	>
 		<div class="grid grid-cols-2 gap-0">
 			<div class="font-1 text-2xl dark:text-gray-100">{{ $t('sidebar.title') }}</div>
-			<div class="text-right md:hidden dark:text-gray-100"><i class="fas fa-times cursor-pointer" @click="toggle"></i></div>
+			<div class="text-right md:hidden dark:text-gray-100">
+				<i class="fas fa-times cursor-pointer" @click="closeSidebar"></i></div>
 		</div>
 
 		<ul id="menu" class="mb-auto">
@@ -92,44 +93,41 @@
 
 <script>
 export default {
-	name: "Sidebar",
-	data: function () {
+	name:     "Sidebar",
+	data:     function () {
 		return {
-			closed: true,
 			linkClicked: false,
-			linkActive: '#home',
+			linkActive:  '#home',
 			isScrolling: null,
-			dark: false
+			dark:        false
 		};
 	},
-	computed:   {
+	computed: {
 		locale: function () {
 			return this.$store.state.locale;
+		},
+		closed: function () {
+			return !this.$store.state.sidebarOpen;
 		}
 	},
 	mounted() {
-		this.$root.$on('sidebar-toggle', this.toggle);
-
 		this.dark = this.$store.state.theme === 'dark';
 
 		this.initLinkActive();
 		this.scrollspy();
 	},
 	methods: {
-		toggle: function () {
-			this.closed = !this.closed;
+		closeSidebar:        function () {
+			this.$store.dispatch('closeSidebar');
 		},
-		close: function () {
-			this.closed = true;
-		},
-		clickNavLink: function (event) {
+		clickNavLink:        function (event) {
 			this.linkClicked = true;
 
 			this.setLinkActive(event.target);
 
-			this.close();
+			this.closeSidebar();
 		},
-		setLinkActive: function (newActiveLink) {
+		setLinkActive:       function (newActiveLink) {
 			const currentActiveLink = document.querySelector('#menu li a.active');
 
 			if (currentActiveLink) {
@@ -140,7 +138,7 @@ export default {
 			newActiveLink.setAttribute('aria-current', 'page');
 			newActiveLink.classList.add('active');
 		},
-		initLinkActive: function () {
+		initLinkActive:      function () {
 			// onload check if a section is requested, if so, set the corrispondent link nav active
 			if (window.location.hash) {
 				const newActiveLink = document.querySelector('#menu li a[href="' + window.location.hash + '"]');
@@ -149,8 +147,8 @@ export default {
 				}
 			}
 		},
-		scrollspy: function () {
-			const section = document.querySelectorAll("section");
+		scrollspy:           function () {
+			const section  = document.querySelectorAll("section");
 			const sections = {};
 
 			for (let i = 0; i < section.length; i++) {
@@ -188,7 +186,7 @@ export default {
 		setLinkClickedFalse: function () {
 			this.linkClicked = false;
 		},
-		setSiteLocale: function (event) {
+		setSiteLocale:       function (event) {
 			event.preventDefault();
 
 			const target = event.target;
@@ -206,7 +204,7 @@ export default {
 			// save locale to vuex
 			this.$store.commit('changeLocale', locale);
 		},
-		toggleTheme: function () {
+		toggleTheme:         function () {
 			// save theme to vuex
 			this.$store.commit('changeTheme', this.dark ? 'dark' : 'light');
 		}

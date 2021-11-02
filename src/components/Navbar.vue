@@ -11,7 +11,7 @@ export default {
 	name:    "Navbar",
 	methods: {
 		toggleSidebar: function () {
-			this.$root.$emit('sidebar-toggle');
+			this.$store.dispatch('toggleSidebar');
 		}
 	}
 }
