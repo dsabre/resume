@@ -63,7 +63,7 @@
 					   checked="checked"
 					   class="toggle toggle-sm mx-1 -m-1"
 					   v-model="dark"
-					   @change="setTheme"
+					   @change="toggleTheme"
 				>
 				<i class="fas fa-moon dark:text-gray-100"></i>
 			</div>
@@ -90,16 +90,11 @@ export default {
 			dark: false
 		};
 	},
-	computed: {
-		theme: function () {
-			return this.$parent.$data.theme;
-		}
-	},
 	mounted() {
 		this.$root.$on('sidebar-toggle', this.toggle);
 		this.$root.$on('sidebar-locale', this.setLocale);
 
-		this.dark = this.$parent.$data.theme === 'dark';
+		this.dark = this.$store.state.theme === 'dark';
 
 		this.initLinkActive();
 		this.scrollspy();
@@ -211,12 +206,9 @@ export default {
 				this.setLinkLocaleActive(newActiveLink);
 			}
 		},
-		setTheme: function () {
-			const theme = this.dark ? 'dark' : 'light';
-
-			Cookies.set('theme', theme);
-
-			this.$root.$emit('app-theme', theme);
+		toggleTheme: function () {
+			// save theme to vuex
+			this.$store.commit('changeTheme', this.dark ? 'dark' : 'light');
 		}
 	}
 }

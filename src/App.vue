@@ -54,26 +54,15 @@ export default {
 		Navbar,
 		Sidebar
 	},
-	data() {
-		return {
-			theme: 'light'
+	computed:   {
+		theme: function () {
+			return this.$store.state.theme;
 		}
 	},
 	mounted() {
-		this.localeHandler();
-		this.themeHandler();
-
-		this.$root.$on('app-theme', this.themeHandler);
-	},
-	methods: {
-		themeHandler:  function (theme) {
-			this.theme = theme || Cookies.get('theme') || this.theme;
-		},
-		localeHandler: function () {
-			const prevLocale  = (Cookies.get('locale') || this.$i18n.fallbackLocale).trim();
-			this.$i18n.locale = prevLocale;
-			this.$root.$emit('sidebar-locale', prevLocale);
-		}
+		const prevLocale  = (Cookies.get('locale') || this.$i18n.fallbackLocale).trim();
+		this.$i18n.locale = prevLocale;
+		this.$root.$emit('sidebar-locale', prevLocale);
 	}
 }
 </script>
