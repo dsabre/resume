@@ -102,13 +102,16 @@ export default {
 
 			window.grecaptcha.ready(() => {
 				window.grecaptcha.execute(process.env.VUE_APP_RECAPTCHA_SITE_KEY, {action: 'sendMessage'}).then(token => {
+					// axios.post('http://localhost:3000/send-message', {
 					axios.post(process.env.VUE_APP_CONTACT_SERVER + '/send-message', {
 						name:            this.name.trim(),
 						message:         this.message.trim(),
 						grecaptchaToken: token,
-						locale:          this.$store.state.locale,
-						theme:           this.$store.state.theme,
-						siteKey:         process.env.VUE_APP_TELEGRAMBOT_SITE_KEY
+						siteKey:         process.env.VUE_APP_TELEGRAMBOT_SITE_KEY,
+						extraData:       {
+							theme:  this.$store.state.theme,
+							locale: this.$store.state.locale
+						}
 					}).then(() => {
 						this.name    = '';
 						this.message = '';
