@@ -28,7 +28,7 @@
 		<div class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
 			<div v-for="(item, index) in interests"
 				 :key="index"
-				 :class="'ring-' + item.ringColor + '-200 dark:ring-' + item.ringColor + '-500 p-3 text-center bg-gray-50 dark:bg-gray-600 dark:text-gray-100 ring shadow-lg rounded sm:rounded-full'"
+				 :class="'p-3 text-center shadow-lg rounded sm:rounded-full bg-gradient-to-br ' + item.extraClasses"
 				 data-aos="flip-left"
 				 data-aos-duration="1000"
 				 :data-aos-delay="delay + delay * index"
@@ -51,12 +51,12 @@ export default {
 	computed: {
 		interests: function () {
 			return [
-				{label: this.$t('about.interests.items.gaming'), ringColor: 'pink', icon: 'fas fa-headset'},
-				{label: this.$t('about.interests.items.coding'), ringColor: 'green', icon: 'fas fa-code'},
-				{label: this.$t('about.interests.items.photography'), ringColor: 'blue', icon: 'fas fa-camera'},
-				{label: this.$t('about.interests.items.anime'), ringColor: 'yellow', icon: 'fas fa-comments'},
-				{label: this.$t('about.interests.items.tvSeries'), ringColor: 'red', icon: 'fas fa-tv'},
-				{label: this.$t('about.interests.items.films'), ringColor: 'purple', icon: 'fas fa-film'}
+				{label: this.$t('about.interests.items.gaming'), extraClasses: 'from-pink-400 to-indigo-500', icon: 'fas fa-headset'},
+				{label: this.$t('about.interests.items.coding'), extraClasses: 'from-green-400 to-green-700', icon: 'fas fa-code'},
+				{label: this.$t('about.interests.items.photography'), extraClasses: 'from-blue-400 to-blue-700', icon: 'fas fa-camera'},
+				{label: this.$t('about.interests.items.anime'), extraClasses: 'from-yellow-300 to-yellow-600', icon: 'fas fa-comments'},
+				{label: this.$t('about.interests.items.tvSeries'), extraClasses: 'from-red-400 to-red-700', icon: 'fas fa-tv'},
+				{label: this.$t('about.interests.items.films'), extraClasses: 'from-indigo-400 to-indigo-600', icon: 'fas fa-film'}
 			];
 		},
 		age:       function () {
