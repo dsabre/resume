@@ -7,5 +7,6 @@ module.exports = {
             enableInSFC:    undefined,
             enableBridge:   undefined
         }
-    }
+    },
+    publicPath: process.env.NODE_ENV === 'production' ? '/resume/' : '/'
 }
