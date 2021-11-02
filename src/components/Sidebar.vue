@@ -61,31 +61,20 @@
 			<div>
 				<i class="fas fa-sun dark:text-gray-100"></i>
 				<input type="checkbox"
-					   checked="checked"
 					   class="toggle toggle-sm mx-1 -m-1"
 					   v-model="dark"
 					   @change="toggleTheme"
 				>
 				<i class="fas fa-moon dark:text-gray-100"></i>
 			</div>
-			<div id="language-selector" class="text-right text-gray-500 dark:text-gray-300">
-				<a href="#"
-				   class="hover:text-black dark:hover:text-gray-100"
-				   data-locale="it"
-				   @click="setSiteLocale"
-				   v-bind:class="{'active': locale === 'it'}"
+			<div class="text-right dark:text-gray-100">
+				ENG
+				<input type="checkbox"
+					   class="toggle toggle-sm mx-1 -m-1"
+					   @change="toggleLocale"
+					   :checked="locale === 'it'"
 				>
-					ITA
-				</a>
-				|
-				<a href="#"
-				   class="hover:text-black dark:hover:text-gray-100"
-				   data-locale="en"
-				   @click="setSiteLocale"
-				   v-bind:class="{'active': locale === 'en'}"
-				>
-					ENG
-				</a>
+				ITA
 			</div>
 		</div>
 	</div>
@@ -186,17 +175,9 @@ export default {
 		setLinkClickedFalse: function () {
 			this.linkClicked = false;
 		},
-		setSiteLocale:       function (event) {
-			event.preventDefault();
-
-			const target = event.target;
-
-			if (!target) {
-				return;
-			}
-
-			// get locale selected
-			const locale = target.dataset.locale.trim();
+		toggleLocale:        function () {
+			// get new locale
+			const locale = this.$i18n.availableLocales.filter(l => l !== this.$i18n.locale)[0];
 
 			// set locale
 			this.$i18n.locale = locale;
