@@ -9,7 +9,7 @@ module.exports = {
         }
     },
 
-    publicPath: process.env.NODE_ENV === 'production' ? '/resume-site/' : '/',
+    publicPath: process.env.NODE_ENV === 'production' ? '/resume/' : '/',
 
     chainWebpack: config => {
         config
