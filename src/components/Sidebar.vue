@@ -130,7 +130,7 @@ export default {
 		this.initLinkActive();
 		this.scrollspy();
 
-		const swiper = new Swipe(this.$refs.sidebar, 100);
+		const swiper = new Swipe(this.$refs.sidebar, 50);
 		swiper.onLeft(() => {
 			this.closeSidebar();
 		});
