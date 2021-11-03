@@ -1,5 +1,6 @@
 <template>
 	<div id="sidebar"
+		 ref="sidebar"
 		 v-bind:class="{'closed': !open}"
 		 class="left-0 top-0 flex flex-col fixed w-screen md:w-1/4 p-4 min-h-screen md:border-r md:border-gray-300 md:dark:border-gray-600 bg-gray-50 dark:bg-gray-800 z-20"
 	>
@@ -81,6 +82,8 @@
 </template>
 
 <script>
+import Swipe from "../classes/Swipe";
+
 export default {
 	name:     "Sidebar",
 	data:     function () {
@@ -126,6 +129,12 @@ export default {
 
 		this.initLinkActive();
 		this.scrollspy();
+
+		const swiper = new Swipe(this.$refs.sidebar, 100);
+		swiper.onLeft(() => {
+			this.closeSidebar();
+		});
+		swiper.run();
 	},
 	methods: {
 		closeSidebar:        function () {

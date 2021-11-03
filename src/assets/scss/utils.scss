@@ -22,5 +22,6 @@ html {
 }
 
 body{
-	overflow-x: hidden;
+	@apply w-screen;
+	@apply overflow-x-hidden;
 }
