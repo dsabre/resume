@@ -43,7 +43,7 @@ export default class Swipe {
             return;
         }
 
-        if (this.xDiff < this.gap && this.onRight) {
+        if (this.xDiff < (this.gap * -1) && this.onRight) {
             this.onRight();
             this._reset();
         }
@@ -56,7 +56,7 @@ export default class Swipe {
             return;
         }
 
-        if (this.yDiff < this.gap && this.onDown) {
+        if (this.yDiff < (this.gap * -1) && this.onDown) {
             this.onDown();
             this._reset();
         }
