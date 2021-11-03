@@ -17,11 +17,15 @@ try {
 
     console.log(chalk.cyan('Deploy started from branch') + ' ' + chalk.bgBlue(chalk.yellowBright(currentBranch)));
 
-    console.log('\n' + chalk.cyan('Committing uncommitted changes'));
-    execSyncVerbose('git add .');
-    execSyncVerbose('git commit -m "Develop"');
-    execSyncVerbose('git pull');
-    execSyncVerbose('git push');
+    try {
+        console.log('\n' + chalk.cyan('Committing uncommitted changes'));
+        execSyncVerbose('git add .');
+        execSyncVerbose('git commit -m "Develop"');
+        execSyncVerbose('git pull');
+        execSyncVerbose('git push');
+    } catch (err) {
+        console.error(chalk.red(err.message));
+    }
 
     console.log('\n' + chalk.cyan('Build project'));
     execSyncVerbose(`git checkout --orphan ${PAGES_BRANCH_NAME}`);
@@ -42,6 +46,6 @@ try {
 
     console.log('\n' + chalk.green('SUCCESSFULLY DEPLOYED'));
 } catch (err) {
-    console.log(chalk.red(err.message));
+    console.error(chalk.red(err.message));
     process.exit(1);
 }
