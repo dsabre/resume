@@ -5,7 +5,7 @@
 		<div class="grid grid-cols-1 md:grid-cols-2">
 			<div class="md:pr-12">
 				<h2 class="dark:text-gray-100">{{ $t('resume.experiences.title') }}</h2>
-				<ul>
+				<ul class="overflow-x-hidden">
 					<li v-for="(item, index) in $t('resume.experiences.items')"
 						:key="index"
 						class="bg-gray-100 dark:bg-gray-600 dark:text-gray-100 border dark:border-gray-500 mb-3 shadow"
@@ -28,7 +28,7 @@
 			</div>
 			<div class="md:pr-12">
 				<h2 class="dark:text-gray-100">{{ $t('resume.education.title') }}</h2>
-				<ul>
+				<ul class="overflow-x-hidden">
 					<li v-for="(item, index) in $t('resume.education.items')"
 						:key="index"
 						class="bg-gray-100 dark:bg-gray-600 dark:text-gray-100 border dark:border-gray-500 mb-3 shadow"
