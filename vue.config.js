@@ -8,5 +8,5 @@ module.exports = {
             enableBridge:   undefined
         }
     },
-    publicPath: process.env.NODE_ENV === 'production' ? '/resume/' : '/'
+    publicPath: process.env.NODE_ENV === 'production' ? '/resume-site/' : '/'
 }
