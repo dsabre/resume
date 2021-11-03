@@ -98,12 +98,12 @@ export default {
 		locale: function () {
 			return this.$store.state.locale;
 		},
-		open: function () {
+		open:   function () {
 			const open = this.$store.state.sidebarOpen;
 
 			if (open) {
 				// lock body scroll when sidebar is open
-				document.body.style.top = `-${window.scrollY}px`;
+				document.body.style.top      = `-${window.scrollY}px`;
 				document.body.style.position = 'fixed';
 			} else {
 				// restore old position and body styles when sidebar is closed
@@ -112,9 +112,9 @@ export default {
 				document.documentElement.style.scrollBehavior = 'auto';
 
 				// restore body scroll
-				const scrollY = document.body.style.top;
+				const scrollY                = document.body.style.top;
 				document.body.style.position = '';
-				document.body.style.top = '';
+				document.body.style.top      = '';
 				window.scrollTo(0, parseInt(scrollY || '0') * -1);
 
 				// restore scroll behavior
@@ -129,14 +129,24 @@ export default {
 
 		this.initLinkActive();
 		this.scrollspy();
-
-		const swiper = new Swipe(this.$refs.sidebar, 50);
-		swiper.onLeft(() => {
-			this.closeSidebar();
-		});
-		swiper.run();
+		this.swipeToClose();
+		this.swipeToOpen();
 	},
 	methods: {
+		swipeToOpen:         function () {
+			const swiper = new Swipe(document, 50);
+			swiper.onRight(() => {
+				this.$store.dispatch('openSidebar');
+			});
+			swiper.run();
+		},
+		swipeToClose:        function () {
+			const swiper = new Swipe(this.$refs.sidebar, 50);
+			swiper.onLeft(() => {
+				this.closeSidebar();
+			});
+			swiper.run();
+		},
 		closeSidebar:        function () {
 			this.$store.dispatch('closeSidebar');
 		},

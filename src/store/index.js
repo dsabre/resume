@@ -31,6 +31,9 @@ export default new Vuex.Store({
         },
         closeSidebar() {
             this.state.sidebarOpen = false;
+        },
+        openSidebar() {
+            this.state.sidebarOpen = true;
         }
     },
     modules:   {}
