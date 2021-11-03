@@ -25,3 +25,9 @@ body {
 .white-space {
 	white-space: normal !important;
 }
+
+#control-height {
+	height: 100vh;
+	width: 0;
+	position: absolute;
+}

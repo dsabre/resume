@@ -58,7 +58,7 @@
 			</li>
 		</ul>
 
-		<div class="grid grid-cols-2 gap-0 mb-10">
+		<div class="grid grid-cols-2 gap-0" :style="'margin-bottom: ' + (barHeight + 5) + 'px;'">
 			<div>
 				<i class="fas fa-sun dark:text-gray-100"></i>
 				<input type="checkbox"
@@ -78,6 +78,8 @@
 				ITA
 			</div>
 		</div>
+
+		<div id="control-height"></div>
 	</div>
 </template>
 
@@ -122,6 +124,11 @@ export default {
 			}
 
 			return open;
+		},
+		barHeight: function () {
+			const actualHeight = window.innerHeight;
+			const elementHeight = document.getElementById('control-height').clientHeight;
+			return elementHeight - actualHeight;
 		}
 	},
 	mounted() {
