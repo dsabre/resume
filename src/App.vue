@@ -59,6 +59,15 @@ export default {
 		}
 	},
 	mounted() {
+		const newStyle = document.createElement('style');
+		newStyle.appendChild(document.createTextNode("\
+			@font-face {\
+				font-family: 'Invaders';\
+				src: url('./fonts/invaders_from_space/invaders.from.space.[fontvir.us].ttf') format('truetype');\
+			}\
+		"));
+		document.head.appendChild(newStyle);
+
 		this.$i18n.locale = this.$store.state.locale;
 	}
 }
