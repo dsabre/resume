@@ -1,10 +1,14 @@
 html {
 	scroll-behavior: smooth;
+	height: -webkit-fill-available;
 }
 
 body {
 	@apply w-screen;
 	@apply overflow-x-hidden;
+	@apply min-h-screen;
+
+	min-height: -webkit-fill-available;
 }
 
 .page-section {
