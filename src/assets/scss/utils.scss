@@ -6,7 +6,7 @@ html {
 body {
 	@apply w-screen;
 	@apply overflow-x-hidden;
-	@apply min-h-screen;
+	//@apply min-h-screen;
 
 	min-height: -webkit-fill-available;
 }
