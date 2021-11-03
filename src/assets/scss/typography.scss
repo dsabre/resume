@@ -20,7 +20,7 @@ dt {
 	@extend .font-1;
 }
 
-button{
+button.styled{
 	@apply font-bold;
 	@apply bg-gradient-to-r #{!important};
 	@apply from-blue-500 #{!important};

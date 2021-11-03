@@ -1,6 +1,6 @@
 <template>
 	<nav class="flex md:hidden sticky top-0 px-3 py-2 bg-gray-50 dark:bg-gray-800 z-10">
-		<button class="rounded-full h-10 w-10 flex items-center justify-center dark:text-gray-100" @click="toggleSidebar">
+		<button class="styled rounded-full h-10 w-10 flex items-center justify-center dark:text-gray-100" @click="toggleSidebar">
 			<i class="fas fa-bars"></i>
 		</button>
 

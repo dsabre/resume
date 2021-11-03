@@ -1,7 +1,7 @@
 <template>
 	<div id="sidebar"
-		 v-bind:class="{'closed': closed}"
-		 class="left-0 flex flex-col fixed md:statica w-screen md:w-1/4 p-4 min-h-screen md:border-r md:border-gray-300 md:dark:border-gray-600 bg-gray-50 dark:bg-gray-800 z-20"
+		 v-bind:class="{'closed': !open}"
+		 class="left-0 top-0 flex flex-col fixed w-screen md:w-1/4 p-4 min-h-screen md:border-r md:border-gray-300 md:dark:border-gray-600 bg-gray-50 dark:bg-gray-800 z-20"
 	>
 		<div class="grid grid-cols-2 gap-0">
 			<div class="font-1 text-2xl dark:text-gray-100">{{ $t('sidebar.title') }}</div>
@@ -95,8 +95,30 @@ export default {
 		locale: function () {
 			return this.$store.state.locale;
 		},
-		closed: function () {
-			return !this.$store.state.sidebarOpen;
+		open: function () {
+			const open = this.$store.state.sidebarOpen;
+
+			if (open) {
+				// lock body scroll when sidebar is open
+				document.body.style.top = `-${window.scrollY}px`;
+				document.body.style.position = 'fixed';
+			} else {
+				// restore old position and body styles when sidebar is closed
+
+				// this to avoid smooth scrolling when restoring body previous scroll
+				document.documentElement.style.scrollBehavior = 'auto';
+
+				// restore body scroll
+				const scrollY = document.body.style.top;
+				document.body.style.position = '';
+				document.body.style.top = '';
+				window.scrollTo(0, parseInt(scrollY || '0') * -1);
+
+				// restore scroll behavior
+				document.documentElement.style.scrollBehavior = 'smooth';
+			}
+
+			return open;
 		}
 	},
 	mounted() {

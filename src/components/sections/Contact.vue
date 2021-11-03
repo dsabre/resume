@@ -33,7 +33,7 @@
 					></textarea>
 
 					<button type="submit"
-							class="font-2 w-full mt-3"
+							class="styled font-2 w-full mt-3"
 							:disabled="!canSubmit"
 							v-bind:class="{'hover:from-blue-600 hover:to-green-600 dark:hover:from-red-500 dark:hover:to-pink-600': canSubmit, 'cursor-wait': sending}"
 					>
@@ -43,34 +43,31 @@
 				</form>
 			</div>
 		</div>
-
-		<div class="z-30 hidden md:block bg-green-100 p-5 border border-green-500 text-green-700 rounded-0 fixed top-4 right-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
-			 v-bind:class="{'opacity-0': !showMessageSuccess, 'opacity-100': showMessageSuccess}"
-		>
-			<span>{{ $t('contact.form.messages.success') }}</span>
-		</div>
-		<div class="z-30 block md:hidden bg-green-100 p-5 border border-green-500 text-green-700 rounded-0 fixed top-4 inset-x-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
-			 v-bind:class="{'opacity-0': !showMessageSuccess, 'opacity-100': showMessageSuccess}"
-		>
-			<span>{{ $t('contact.form.messages.success') }}</span>
-		</div>
-
-		<div class="z-30 hidden md:block bg-red-100 p-5 border border-red-500 text-red-700 rounded-0 fixed top-4 right-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
-			 v-bind:class="{'opacity-0': !showMessageError, 'opacity-100': showMessageError}"
-		>
-			<span>{{ $t('contact.form.messages.error') }}</span>
-		</div>
-		<div class="z-30 block md:hidden bg-red-100 p-5 border border-red-500 text-red-700 rounded-0 fixed top-4 inset-x-4 text-center shadow-lg transition-opacity duration-150 ease-in-out"
-			 v-bind:class="{'opacity-0': !showMessageError, 'opacity-100': showMessageError}"
-		>
-			<span>{{ $t('contact.form.messages.error') }}</span>
-		</div>
 	</section>
 </template>
 
 <script>
+import * as toastr from 'toastr';
 import * as axios         from 'axios';
 import {urlContactServer} from "../../../site.config";
+
+toastr.options = {
+	"closeButton":       true,
+	"debug":             false,
+	"newestOnTop":       true,
+	"progressBar":       true,
+	"positionClass":     "toast-top-right",
+	"preventDuplicates": true,
+	"onclick":           null,
+	"showDuration":      "300",
+	"hideDuration":      "1000",
+	"timeOut":           "5000",
+	"extendedTimeOut":   "1000",
+	"showEasing":        "swing",
+	"hideEasing":        "linear",
+	"showMethod":        "fadeIn",
+	"hideMethod":        "fadeOut"
+}
 
 export default {
 	name: "Contact",
@@ -101,6 +98,10 @@ export default {
 
 			this.sending = true;
 
+			this.name    = '';
+			this.message = '';
+			this.sending = false;
+
 			window.grecaptcha.ready(() => {
 				window.grecaptcha.execute(process.env.VUE_APP_RECAPTCHA_SITE_KEY, {action: 'sendMessage'}).then(token => {
 					axios.post(urlContactServer + '/send-message', {
@@ -117,22 +118,14 @@ export default {
 						this.message = '';
 						this.sending = false;
 
-						this.doShowMessageSuccess();
+						toastr.success(this.$t('contact.form.messages.success'));
 					}).catch(() => {
 						this.sending = false;
 
-						this.doShowMessageError();
+						toastr.error(this.$t('contact.form.messages.error'));
 					});
 				});
 			});
-		},
-		doShowMessageSuccess: function () {
-			this.showMessageSuccess = true;
-			setTimeout(() => this.showMessageSuccess = false, this.hideMessageTimeout);
-		},
-		doShowMessageError:   function () {
-			this.showMessageError = true;
-			setTimeout(() => this.showMessageError = false, this.hideMessageTimeout);
 		}
 	}
 }
