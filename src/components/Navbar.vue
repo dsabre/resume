@@ -6,7 +6,7 @@
 
 		<div class="text-right w-full inline-block table">
 			<span class="font-1 dark:text-gray-100 table-cell align-middle">
-				{{ appHeight }} - Daniele Sabre
+				Daniele Sabre
 			</span>
 		</div>
 	</nav>
@@ -14,22 +14,10 @@
 
 <script>
 export default {
-	name:     "Navbar",
-	data(){
-		return {
-			appHeight: null
-		};
-	},
-	mounted() {
-		this.getAppHeight();
-		window.addEventListener('resize', this.getAppHeight);
-	},
-	methods:  {
+	name:    "Navbar",
+	methods: {
 		toggleSidebar: function () {
 			this.$store.dispatch('toggleSidebar');
-		},
-		getAppHeight:  function () {
-			this.appHeight = getComputedStyle(document.documentElement).getPropertyValue('--app-height').trim();
 		}
 	}
 }

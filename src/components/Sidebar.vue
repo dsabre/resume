@@ -58,7 +58,7 @@
 			</li>
 		</ul>
 
-		<div class="grid grid-cols-2 gap-0">
+		<div class="grid grid-cols-2 gap-0 mb-5">
 			<div>
 				<i class="fas fa-sun dark:text-gray-100"></i>
 				<input type="checkbox"

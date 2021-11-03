@@ -62,10 +62,6 @@ export default {
 	mounted() {
 		this.createInvadersFont();
 		this.$i18n.locale = this.$store.state.locale;
-
-		// manage app height to avoid footer lose behind mobile browser toolbars
-		window.addEventListener('resize', this.manageAppHeight);
-		this.manageAppHeight();
 	},
 	methods: {
 		createInvadersFont: function () {
@@ -77,9 +73,6 @@ export default {
 				}
 			`));
 			document.head.appendChild(newStyle);
-		},
-		manageAppHeight:    function () {
-			document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
 		}
 	}
 }
