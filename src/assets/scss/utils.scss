@@ -1,14 +1,19 @@
+:root {
+	--app-height: 100%;
+}
+
 html {
 	scroll-behavior: smooth;
-	height: -webkit-fill-available;
 }
 
 body {
 	@apply w-screen;
 	@apply overflow-x-hidden;
-	//@apply min-h-screen;
+	@apply h-screen;
 
-	min-height: -webkit-fill-available;
+	@media not all and (hover: hover) {
+		height: var(--app-height);
+	}
 }
 
 .page-section {

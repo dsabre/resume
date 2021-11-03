@@ -60,16 +60,27 @@ export default {
 		}
 	},
 	mounted() {
-		const newStyle = document.createElement('style');
-		newStyle.appendChild(document.createTextNode(`
-			@font-face {
-				font-family: 'Invaders';
-				src: url('.${publicPath}fonts/invaders_from_space/invaders.from.space.[fontvir.us].ttf') format('truetype');
-			}
-		`));
-		document.head.appendChild(newStyle);
-
+		this.createInvadersFont();
 		this.$i18n.locale = this.$store.state.locale;
+
+		// manage app height to avoid footer lose behind mobile browser toolbars
+		window.addEventListener('resize', this.manageAppHeight);
+		this.manageAppHeight();
+	},
+	methods: {
+		createInvadersFont: function () {
+			const newStyle = document.createElement('style');
+			newStyle.appendChild(document.createTextNode(`
+				@font-face {
+					font-family: 'Invaders';
+					src: url('.${publicPath}fonts/invaders_from_space/invaders.from.space.[fontvir.us].ttf') format('truetype');
+				}
+			`));
+			document.head.appendChild(newStyle);
+		},
+		manageAppHeight:    function () {
+			document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+		}
 	}
 }
 </script>
