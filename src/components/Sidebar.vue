@@ -79,7 +79,7 @@
 			</div>
 		</div>
 
-		<div id="control-height"></div>
+		<div ref="controlHeight" id="control-height"></div>
 	</div>
 </template>
 
@@ -93,7 +93,8 @@ export default {
 			linkClicked: false,
 			linkActive:  '#home',
 			isScrolling: null,
-			dark:        false
+			dark:        false,
+			barHeight:   0
 		};
 	},
 	computed: {
@@ -124,11 +125,6 @@ export default {
 			}
 
 			return open;
-		},
-		barHeight: function () {
-			const actualHeight = window.innerHeight;
-			const elementHeight = document.getElementById('control-height').clientHeight;
-			return elementHeight - actualHeight;
 		}
 	},
 	mounted() {
@@ -138,8 +134,14 @@ export default {
 		this.scrollspy();
 		this.swipeToClose();
 		this.swipeToOpen();
+		this.getBarHeight();
 	},
 	methods: {
+		getBarHeight:        function () {
+			const actualHeight  = window.innerHeight;
+			const elementHeight = this.$refs.controlHeight.clientHeight;
+			this.barHeight      = elementHeight - actualHeight;
+		},
 		swipeToOpen:         function () {
 			const swiper = new Swipe(document, 50);
 			swiper.onRight(() => {
