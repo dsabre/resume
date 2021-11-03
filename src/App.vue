@@ -21,14 +21,15 @@
 </template>
 
 <script>
-import AOS     from 'aos';
-import Navbar  from "./components/Navbar";
-import About   from "./components/sections/About";
-import Contact from "./components/sections/Contact";
-import Home    from "./components/sections/Home";
-import Resume  from "./components/sections/Resume";
-import Skills  from "./components/sections/Skills";
-import Sidebar from "./components/Sidebar";
+import AOS          from 'aos';
+import {publicPath} from "../vue.config";
+import Navbar       from "./components/Navbar";
+import About        from "./components/sections/About";
+import Contact      from "./components/sections/Contact";
+import Home         from "./components/sections/Home";
+import Resume       from "./components/sections/Resume";
+import Skills       from "./components/sections/Skills";
+import Sidebar      from "./components/Sidebar";
 
 // https://tailwindcss.com/
 // https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free
@@ -60,12 +61,12 @@ export default {
 	},
 	mounted() {
 		const newStyle = document.createElement('style');
-		newStyle.appendChild(document.createTextNode("\
-			@font-face {\
-				font-family: 'Invaders';\
-				src: url('./fonts/invaders_from_space/invaders.from.space.[fontvir.us].ttf') format('truetype');\
-			}\
-		"));
+		newStyle.appendChild(document.createTextNode(`
+			@font-face {
+				font-family: 'Invaders';
+				src: url('.${publicPath}fonts/invaders_from_space/invaders.from.space.[fontvir.us].ttf') format('truetype');
+			}
+		`));
 		document.head.appendChild(newStyle);
 
 		this.$i18n.locale = this.$store.state.locale;
