@@ -2,6 +2,11 @@ html {
 	scroll-behavior: smooth;
 }
 
+body {
+	@apply w-screen;
+	@apply overflow-x-hidden;
+}
+
 .page-section {
 	@apply p-3;
 	@apply md:pt-16;
@@ -17,11 +22,6 @@ html {
 	}
 }
 
-.white-space{
+.white-space {
 	white-space: normal !important;
-}
-
-body{
-	@apply w-screen;
-	@apply overflow-x-hidden;
 }
