@@ -24,7 +24,7 @@ try {
         execSyncVerbose('git pull');
         execSyncVerbose('git push');
     } catch (err) {
-        console.error(chalk.red(err.message));
+        console.error(chalk.yellow('Nothing to commit'));
     }
 
     console.log('\n' + chalk.cyan('Build project'));
