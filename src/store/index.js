@@ -6,8 +6,9 @@ import i18n    from '../i18n';
 Vue.use(Vuex);
 
 // cookie names
-const COOKIE_THEME  = 'theme';
-const COOKIE_LOCALE = 'locale';
+const COOKIE_THEME           = 'theme';
+const COOKIE_LOCALE          = 'locale';
+const COOKIE_DEFAULT_OPTIONS = {expires: 7, path: '', secure: true, sameSite: 'strict'};
 
 export default new Vuex.Store({
     state:     {
@@ -20,13 +21,13 @@ export default new Vuex.Store({
             this.state.theme = theme;
 
             // save theme in cookie
-            Cookies.set(COOKIE_THEME, theme, {expires: 7, path: '', secure: true, sameSite: 'strict'});
+            Cookies.set(COOKIE_THEME, theme, COOKIE_DEFAULT_OPTIONS);
         },
         changeLocale(state, locale) {
             this.state.locale = locale;
 
             // save locale in cookie
-            Cookies.set(COOKIE_LOCALE, locale, {expires: 7, path: '', secure: true, sameSite: 'strict'});
+            Cookies.set(COOKIE_LOCALE, locale, COOKIE_DEFAULT_OPTIONS);
         }
     },
     actions:   {
