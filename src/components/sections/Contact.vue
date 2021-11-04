@@ -11,7 +11,7 @@
 				></iframe>
 			</div>
 			<div>
-				<h2 class="dark:text-gray-100">{{ $t('contact.form.title') }}</h2>
+				<h2 class="hidden md:block dark:text-gray-100">{{ $t('contact.form.title') }}</h2>
 				<form v-on:submit="sendMessage"
 					  v-bind:class="{'cursor-wait': sending}"
 				>
