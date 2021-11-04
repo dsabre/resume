@@ -9,12 +9,13 @@
     },
     "home":    {
         "title":  "Hello,<br>I Am Daniele Sabre",
-        "teaser": "Extreme lazy human.<br>But laziness is at the bases of the most wonderful inventions of the world.<br><b>Laziness = inventions</b>"
+        "teaser": "A lazy human that love automations."
     },
     "about":   {
         "title":     "About Me",
         "text":      [
-            ""
+            "Hi! I'm Daniele and I'm a frontend developer since 2009, I am specialized in the use of PHP (Symfony), JavaScript (jQuery, Vue, Angular), CSS3 (SCSS, SASS).",
+            "I'm in love with the Javascript/Typescript languages and therefore I am specializing in the use of Vue frameworks (for example this site), Angular, Svelte and React (although I must admit that I don't like it very much)."
         ],
         "details":   {
             "name":        {
@@ -36,7 +37,7 @@
             },
             "address":     {
                 "label": "Address",
-                "value": "Turin"
+                "value": "Orbassano (Turin)"
             }
         },
         "interests": {

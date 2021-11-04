@@ -9,13 +9,13 @@
     },
     "home":    {
         "title":  "Ciao,<br>Io sono Daniele Sabre",
-        "teaser": "Sono un essere umano molto pigro.<br>Ma la pigrizia è alla base delle invenzioni più meravigliose del mondo.<br><b>Pigrizia = invenzioni</b>"
+        "teaser": "Un essere umano pigro con la passione per l'automatizzazione."
     },
     "about":   {
         "title":     "Mi presento",
         "text":      [
-            "Ciao! Sono Daniele e sono un frontend developer dal 2009, sul lavoro uso PHP, Symfony e Javascript, in molte della sue forme, per realizzare siti, a volte mi diletto con piccoli ritocchia anche al CSS, ma questi sono avvenimenti rari.",
-            "Nel mio privato, invece, mi trasformo e sviluppo i miei progetti personali facendo da full stack developer, utlizzo questi momenti per migliorare le mie conoscenze, sopratutto in ambito front-end, in particolare amo Vue (questo sito è fatto) ed Angular"
+            "Ciao! Sono Daniele e sono un frontend developer dal 2009, sono specializzato nell'uso di PHP (Symfony), JavaScript (jQuery, Vue, Angular), CSS3 (SCSS, SASS).",
+            "Adoro il linguaggi Javascript/Typescript e pertanto mi sto specializzando nell'uso dei framework Vue (ad esempio questo sito), Angular, Svelte e React (anche se devo ammettere che quest'ultimo non mi piace molto)."
         ],
         "details":   {
             "name":        {
@@ -37,7 +37,7 @@
             },
             "address":     {
                 "label": "Indirizzo",
-                "value": "Torino"
+                "value": "Orbassano (TO)"
             }
         },
         "interests": {
