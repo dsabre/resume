@@ -76,7 +76,7 @@ export default {
 	components: {Typer},
 	data(){
 		return {
-			image1: require('../../assets/images/home1.png')
+			image1: require('../../assets/images/home1.jpg')
 		};
 	}
 }
