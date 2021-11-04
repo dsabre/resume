@@ -69,7 +69,7 @@ export default {
 			newStyle.appendChild(document.createTextNode(`
 				@font-face {
 					font-family: 'Invaders';
-					src: url('.${publicPath}fonts/invaders_from_space/invaders.from.space.[fontvir.us].ttf') format('truetype');
+					src: url('./fonts/invaders_from_space/invaders.from.space.[fontvir.us].ttf') format('truetype');
 				}
 			`));
 			document.head.appendChild(newStyle);
