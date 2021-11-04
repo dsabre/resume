@@ -21,15 +21,14 @@
 </template>
 
 <script>
-import AOS          from 'aos';
-import {publicPath} from "../vue.config";
-import Navbar       from "./components/Navbar";
-import About        from "./components/sections/About";
-import Contact      from "./components/sections/Contact";
-import Home         from "./components/sections/Home";
-import Resume       from "./components/sections/Resume";
-import Skills       from "./components/sections/Skills";
-import Sidebar      from "./components/Sidebar";
+import AOS     from 'aos';
+import Navbar  from "./components/Navbar";
+import About   from "./components/sections/About";
+import Contact from "./components/sections/Contact";
+import Home    from "./components/sections/Home";
+import Resume  from "./components/sections/Resume";
+import Skills  from "./components/sections/Skills";
+import Sidebar from "./components/Sidebar";
 
 // https://tailwindcss.com/
 // https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free
