@@ -9,7 +9,10 @@
     },
     "home":    {
         "title":  "Ciao,<br>Io sono Daniele Sabre",
-        "teaser": "Un essere umano pigro con la passione per l'automatizzazione."
+        "teaser": "Un essere umano pigro con la passione per l'automatizzazione.",
+        "image":  {
+            "credits": "Si ringrazia Tania \"PinKodama\" Astone per la foto ❤"
+        }
     },
     "about":   {
         "title":     "Mi presento",

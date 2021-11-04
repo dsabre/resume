@@ -5,6 +5,7 @@
 				<img :src="image1"
 					 alt=""
 					 class="w-full sm:w-3/4 mb-3 mx-auto md:mr-3 md:mb-0 shadow-lg border-2 border-green-500 dark:border-pink-500 md:transform md:rotate-2"
+					 @click="showImageCredits"
 				>
 			</div>
 			<div class="md:pl-3">
@@ -69,15 +70,27 @@
 </template>
 
 <script>
-import Typer from "../Typer";
+import Typer    from "../Typer";
+import {toastr} from '../../utils/toastr';
 
 export default {
-	name: "Home",
+	name:       "Home",
 	components: {Typer},
-	data(){
+	data() {
 		return {
 			image1: require('../../assets/images/home1.jpg')
 		};
+	},
+	methods: {
+		showImageCredits: function () {
+			toastr.info(this.$t('home.image.credits'));
+			// toastrOverrideOptions('info', this.$t('home.image.credits'), {
+			// 	timeOut: 10000,
+			// 	onclick: () => {
+			// 		window.open('https://www.facebook.com/PinKodama', '_blank').focus();
+			// 	}
+			// });
+		}
 	}
 }
 </script>

@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import toastr             from '../../utils/toastr';
+import {toastr}           from '../../utils/toastr';
 import * as axios         from 'axios';
 import {urlContactServer} from "../../../site.config";
 

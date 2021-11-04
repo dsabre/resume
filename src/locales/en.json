@@ -9,7 +9,10 @@
     },
     "home":    {
         "title":  "Hello,<br>I Am Daniele Sabre",
-        "teaser": "A lazy human that love automations."
+        "teaser": "A lazy human that love automations.",
+        "image":  {
+            "credits": "Thanks to Tania \"PinKodama\" Astone for the photo ❤️"
+        }
     },
     "about":   {
         "title":     "About Me",

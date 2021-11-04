@@ -1,6 +1,6 @@
 import * as toastr from 'toastr';
 
-toastr.options = {
+const BASE_OPTIONS = {
     "closeButton":       true,
     "debug":             false,
     "newestOnTop":       true,
@@ -16,6 +16,19 @@ toastr.options = {
     "hideEasing":        "linear",
     "showMethod":        "fadeIn",
     "hideMethod":        "fadeOut"
-}
+};
 
-export default toastr;
+toastr.options = JSON.parse(JSON.stringify(BASE_OPTIONS));
+
+const toastrOverrideOptions = (type, label, newOptions) => {
+    const newOptionsKeys = Object.keys(newOptions);
+    for (let i = 0; i < newOptionsKeys.length; i++) {
+        toastr.options[newOptionsKeys[i]] = newOptions[newOptionsKeys[i]];
+    }
+
+    toastr[type](label);
+
+    toastr.options = JSON.parse(JSON.stringify(BASE_OPTIONS));
+};
+
+export {toastr, toastrOverrideOptions};
