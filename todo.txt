@@ -1,8 +1,9 @@
 home:
     immagine
-    testo ita
 
 about:
     testo:
         ita
         eng
+
+check font invaders

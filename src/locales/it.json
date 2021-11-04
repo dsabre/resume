@@ -9,13 +9,13 @@
     },
     "home":    {
         "title":  "Ciao,<br>Io sono Daniele Sabre",
-        "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus aliquet erat, ut tristique mauris dignissim faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+        "teaser": "Sono un essere umano molto pigro.<br>Ma la pigrizia è alla base delle invenzioni più meravigliose del mondo.<br><b>Pigrizia = invenzioni</b>"
     },
     "about":   {
         "title":     "Mi presento",
         "text":      [
-            "Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.",
-            "Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus."
+            "Ciao! Sono Daniele e sono un frontend developer dal 2009, sul lavoro uso PHP, Symfony e Javascript, in molte della sue forme, per realizzare siti, a volte mi diletto con piccoli ritocchia anche al CSS, ma questi sono avvenimenti rari.",
+            "Nel mio privato, invece, mi trasformo e sviluppo i miei progetti personali facendo da full stack developer, utlizzo questi momenti per migliorare le mie conoscenze, sopratutto in ambito front-end, in particolare amo Vue (questo sito è fatto) ed Angular"
         ],
         "details":   {
             "name":        {
