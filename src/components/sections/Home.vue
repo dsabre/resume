@@ -2,7 +2,7 @@
 	<section id="home" class="page-section">
 		<div class="md:grid md:grid-cols-2 md:gap-0">
 			<div>
-				<img src="https://via.placeholder.com/570x740"
+				<img :src="image1"
 					 alt=""
 					 class="w-full sm:w-3/4 mb-3 mx-auto md:mr-3 md:mb-0 shadow-lg border-2 border-green-500 dark:border-pink-500 md:transform md:rotate-2"
 				>
@@ -74,6 +74,11 @@ import Typer from "../Typer";
 
 export default {
 	name: "Home",
-	components: {Typer}
+	components: {Typer},
+	data(){
+		return {
+			image1: require('../../assets/images/home1.png')
+		};
+	}
 }
 </script>
