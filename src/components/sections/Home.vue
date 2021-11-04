@@ -16,12 +16,12 @@
 				<p class="my-3 dark:text-gray-100" v-html="$t('home.teaser')"></p>
 
 				<div class="text-center dark:bg-gray-300 py-2 md:text-left md:dark:bg-transparent">
-					<a v-for="(link, index) in links"
+					<a v-for="(link, index) in linksImproved"
 					   :key="index"
 					   :href="link.href"
 					   target="_blank"
 					   :title="link.title"
-					   :class="(index > 0 ? 'ml-3 ' : '') + 'text-' + link.color + ' md:text-gray-600 md:dark:text-gray-400 md:hover:text-' + link.color + ' md:dark:hover:text-' + link.color"
+					   :class="(index > 0 ? 'ml-3 ' : '') + link.textColor + ' md:text-gray-600 md:dark:text-gray-400 ' + link.mdHoverTextColor + ' ' + link.mdDarkHoverTextColor"
 					>
 						<i :class="link.icon"></i>
 					</a>
@@ -86,6 +86,17 @@ export default {
 				}
 			]
 		};
+	},
+	computed: {
+		linksImproved: function (){
+			return this.links.map(link => {
+				link.textColor = 'text-' + link.color;
+				link.mdHoverTextColor = 'md:hover:text-' + link.color;
+				link.mdDarkHoverTextColor = 'md:dark:hover:text-' + link.color;
+
+				return link;
+			});
+		}
 	},
 	methods: {
 		showImageCredits: function () {
