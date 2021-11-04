@@ -4,12 +4,13 @@ module.exports = {
     theme:    {
         extend: {
             colors: {
-                facebook:  '#4267b2',
-                linkedin:  '#2867b2',
-                twitter:   '#1da1f2',
-                instagram: '#e1306c',
-                github:    '#171515',
-                npm:       '#cb0000'
+                facebook:      '#4267b2',
+                linkedin:      '#2867b2',
+                twitter:       '#1da1f2',
+                instagram:     '#e1306c',
+                github:        '#171515',
+                npm:           '#cb0000',
+                stackoverflow: '#f48225'
             }
         }
     },
