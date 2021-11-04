@@ -16,13 +16,13 @@ export default new Vuex.Store({
             this.state.theme = theme;
 
             // save theme in cookie
-            Cookies.set('theme', theme);
+            Cookies.set('theme', theme, {expires: 7, path: '', secure: true, sameSite: 'strict'});
         },
         changeLocale(state, locale) {
             this.state.locale = locale;
 
             // save locale in cookie
-            Cookies.set('locale', locale);
+            Cookies.set('locale', locale, {expires: 7, path: '', secure: true, sameSite: 'strict'});
         }
     },
     actions:   {

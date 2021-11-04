@@ -1,4 +1,0 @@
-home:
-    immagine
-
-check form mobile submission
