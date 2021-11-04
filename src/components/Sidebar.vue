@@ -84,7 +84,7 @@
 </template>
 
 <script>
-import Swipe from "../classes/Swipe";
+import Swipe from "../utils/Swipe";
 
 export default {
 	name:     "Sidebar",
