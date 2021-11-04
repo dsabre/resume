@@ -10,6 +10,7 @@
 			<div class="md:pl-3">
 				<h1 class="dark:text-gray-100" v-html="$t('home.title')"></h1>
 
+				<span class="font-invaders text-red-500">B</span>
 				<Typer class="my-3 dark:text-gray-100"/>
 
 				<p class="my-3 dark:text-gray-100" v-html="$t('home.teaser')"></p>

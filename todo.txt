@@ -1,9 +1,4 @@
 home:
     immagine
 
-about:
-    testo:
-        ita
-        eng
-
 check font invaders
