@@ -98,10 +98,6 @@ export default {
 
 			this.sending = true;
 
-			this.name    = '';
-			this.message = '';
-			this.sending = false;
-
 			window.grecaptcha.ready(() => {
 				window.grecaptcha.execute(process.env.VUE_APP_RECAPTCHA_SITE_KEY, {action: 'sendMessage'}).then(token => {
 					axios.post(urlContactServer + '/send-message', {
