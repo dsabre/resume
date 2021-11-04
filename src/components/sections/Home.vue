@@ -21,7 +21,7 @@
 					   :href="link.href"
 					   target="_blank"
 					   :title="link.title"
-					   :class="`${(index > 0 ? 'ml-3 ' : '')}text-${link.color} md:text-gray-600 md:dark:text-gray-400 md:hover:text-${link.color} md:dark:hover:text-${link.color}`"
+					   :class="(index > 0 ? 'ml-3 ' : '') + 'text-' + link.color + ' md:text-gray-600 md:dark:text-gray-400 md:hover:text-' + link.color + ' md:dark:hover:text-' + link.color"
 					>
 						<i :class="link.icon"></i>
 					</a>
