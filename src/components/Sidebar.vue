@@ -59,16 +59,7 @@
 		</ul>
 
 		<div class="grid grid-cols-2 gap-0" :style="'margin-bottom: ' + (barHeight + 5) + 'px;'">
-			<div>
-				<i class="fas fa-sun dark:text-gray-100"></i>
-				<input type="checkbox"
-					   class="toggle toggle-sm mx-1 -m-1"
-					   v-model="dark"
-					   @change="toggleTheme"
-				>
-				<i class="fas fa-moon dark:text-gray-100"></i>
-			</div>
-			<div class="text-right dark:text-gray-100">
+			<div class="dark:text-gray-100">
 				ENG
 				<input type="checkbox"
 					   class="toggle toggle-sm mx-1 -m-1"
@@ -76,6 +67,15 @@
 					   :checked="locale === 'it'"
 				>
 				ITA
+			</div>
+			<div v-if="themeSwitchEnabled" class="text-right">
+				<i class="fas fa-sun dark:text-gray-100"></i>
+				<input type="checkbox"
+					   class="toggle toggle-sm mx-1 -m-1"
+					   v-model="dark"
+					   @change="toggleTheme"
+				>
+				<i class="fas fa-moon dark:text-gray-100"></i>
 			</div>
 		</div>
 
@@ -125,6 +125,9 @@ export default {
 			}
 
 			return open;
+		},
+		themeSwitchEnabled: function () {
+			return this.$store.state.themeSwitchEnabled;
 		}
 	},
 	mounted() {
