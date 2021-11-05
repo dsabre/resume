@@ -5,6 +5,8 @@ name: Publish on GitHub Pages
 
 on:
   workflow_dispatch:
+  push:
+    branches: [master]
 
 jobs:
   publish:
