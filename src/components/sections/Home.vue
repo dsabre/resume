@@ -48,7 +48,7 @@
 						<i class="fab fa-instagram fa-2x"></i>
 					</a>
 
-					<a href="https://github.com/raniel86"
+					<a href="https://github.com/dsabre"
 					   target="_blank"
 					   class="ml-3 text-github md:text-gray-600 md:dark:text-gray-400 md:hover:text-github md:dark:hover:text-github"
 					   title="GitHub"
