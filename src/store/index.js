@@ -11,7 +11,6 @@ const VARNAME_LOCALE = 'locale';
 // setting for check if user has a pref color scheme or not
 let themeDefault       = 'light';
 let themeSwitchEnabled = true;
-console.log(window.matchMedia('(prefers-color-scheme: light)'));
 if (window.matchMedia('(prefers-color-scheme)').media !== 'not all' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     themeDefault       = 'dark';
     themeSwitchEnabled = false;
