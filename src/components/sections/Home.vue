@@ -56,7 +56,7 @@
 						<i class="fab fa-github fa-2x"></i>
 					</a>
 
-					<a href="https://www.npmjs.com/~raniel"
+					<a href="https://www.npmjs.com/~dsabre"
 					   target="_blank"
 					   class="ml-3 text-npm md:text-gray-600 md:dark:text-gray-400 md:hover:text-npm md:dark:hover:text-npm"
 					   title="npm"
