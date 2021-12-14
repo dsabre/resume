@@ -48,7 +48,7 @@ export default {
 				['Symfony', 100, 'https://symfony.com/'],
 				['Angular', 80, 'https://angular.io/'],
 				['React', 30, 'https://it.reactjs.org/'],
-				['Vue', 80, 'https://vuejs.org/']
+				['Vue', 90, 'https://vuejs.org/']
 			]
 		}
 	},
