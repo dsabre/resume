@@ -80,29 +80,29 @@ export default {
 
 			this.sending = true;
 
-			window.grecaptcha.ready(() => {
-				window.grecaptcha.execute(process.env.VUE_APP_RECAPTCHA_SITE_KEY, {action: 'sendMessage'}).then(token => {
-					axios.post(urlContactServer + '/send-message', {
-						name:            this.name.trim(),
-						message:         this.message.trim(),
-						grecaptchaToken: token,
-						siteKey:         process.env.VUE_APP_TELEGRAMBOT_SITE_KEY,
-						extraData:       {
-							theme:  this.$store.state.theme,
-							locale: this.$store.state.locale
-						}
-					}).then(() => {
-						this.name    = '';
-						this.message = '';
-						this.sending = false;
+            window.grecaptcha.ready(() => {
+                window.grecaptcha.execute(process.env.VUE_APP_RECAPTCHA_SITE_KEY, {action: 'sendMessage'}).then(token => {
+                    axios.post(urlContactServer + '/send-message', {
+                        message:         this.message.trim(),
+                        grecaptchaToken: token,
+                        secretKey:       process.env.VUE_APP_TELEGRAMBOT_SITE_KEY,
+                        extraData:       {
+                            Name:   this.name.trim(),
+                            Theme:  this.$store.state.theme,
+                            Locale: this.$store.state.locale
+                        }
+                    }).then(() => {
+                        this.name    = '';
+                        this.message = '';
+                        this.sending = false;
 
-						toastr.success(this.$t('contact.form.messages.success'));
-					}).catch(() => {
-						this.sending = false;
+                        toastr.success(this.$t('contact.form.messages.success'));
+                    }).catch(() => {
+                        this.sending = false;
 
-						toastr.error(this.$t('contact.form.messages.error'));
-					});
-				});
+                        toastr.error(this.$t('contact.form.messages.error'));
+                    });
+                });
 			});
 		}
 	}
